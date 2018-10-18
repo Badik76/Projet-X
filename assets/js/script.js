@@ -1,27 +1,37 @@
-// xxxx's part
+$(function() {
+
+  // Mehdi's part2
 
 
 
 
-// End xxxx's part
+  // End Mehdi's part2
 
-// xxxx's part
-
-
-
-
-// End xxxx's part
-
-// xxxx's part
+  // Manouel's part
 
 
 
+  
+  // End Manouel's part
 
-// End xxxx's part
-
-// xxxx's part
+  // Karl's part
 
 
 
 
-// End xxxx's part
+  // End Karl's part
+
+  // Mehdi's part
+
+
+
+
+  // End Mehdi's part
+
+  // Magalie's part
+
+
+
+
+  // End Magalie's part
+});
