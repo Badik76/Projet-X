@@ -1,12 +1,25 @@
 body {
   font-family: "Lato", sans-serif;
-
-
-
-
-
+}
+.dark-blue {
+  background-color: #323c52;
 }
 
+.dark-blue-text {
+  color: #374664;
+}
+
+.soft-blue {
+  background-color: #0ce7fe;
+}
+
+.soft-blue-text {
+  color: #0ce7fe;
+}
+
+i.icon-dark-blue {
+  color: #374664;
+}
 /* Manouel's part  */
 
 
@@ -22,7 +35,55 @@ body {
 /* End Karl's part */
 
 /* Mehdi's part  */
+#showShoppingCartModal {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+}
 
+.mr-3 {
+  margin-right:30px;
+}
+
+@media screen and (max-width: 600px) {
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
 
 
 
