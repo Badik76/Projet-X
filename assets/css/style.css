@@ -6,7 +6,21 @@ body {
 
 
 }
+.dark-blue {
+  background-color: #323c52;
+}
 
+.dark-blue-text {
+  color: #374664;
+}
+
+.soft-blue {
+  background-color: #0ce7fe;
+}
+
+.soft-blue-text {
+  color: #0ce7fe;
+}
 /* Manouel's part  */
 
 
@@ -16,9 +30,138 @@ body {
 
 /* Karl's part  */
 
+.soft-white {
+  color: #ede7f6;
+}
+
+.bgc {
+  background-image: linear-gradient(#384868, #2a3244);
+  margin-bottom: 0;
+  padding-bottom: 30px;
+}
+
+.bgc1 {
+  background-image: linear-gradient(#39496a, #2a3244);
+  margin-bottom: 0;
+  padding-bottom: 30px;
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  letter-spacing: 3px;
+  background-image: url(../img/hover_h4.svg);
+  background-size: auto 4px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.himg {
+  height: 200px;
+  max-height: 200px;
+  display: flex;
+  transition: 0.3s;
+}
+
+.himg:hover {
+  -webkit-filter:brightness(75%);
+}
+
+.parallax-container {
+  height: 600px;
+  -webkit-filter:brightness(75%);
+}
+
+.row.bgc {
+  padding: 0 40px 30px;
+}
+.hicon {
+  transition:transform.2s; /* Animation */
+  z-index: 1000;
+}
+.hicon:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.responsive-img-perso {
+  max-width: 100%;
+  height:200px;
+}
 
 
+ /* création de class pour le background animé */
 
+.stars__control--small {
+	height: auto;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 0;
+	animation:starflow 60s infinite linear;
+}
+
+.stars__control--medium {
+	height: auto;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 0;
+	animation:starflow 120s infinite linear;
+}
+
+.stars__control--large {
+	height: auto;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 0;
+	animation:starflow 180s infinite linear;
+}
+
+.star__small {
+	width: 3px;
+	height: 3px;
+	position: absolute;
+	border:1px solid #fff;
+	border-radius: 50%;
+	background-color: #34495E;
+}
+
+.star__medium {
+	width: 5px;
+	height: 5px;
+	position: absolute;
+	border:1px solid #fff;
+	border-radius: 50%;
+	background-color: #34495E;
+}
+
+.star__large {
+	width: 8px;
+	height: 8px;
+	position: absolute;
+	border:1px solid #fff;
+	border-radius: 50%;
+	background-color: #34495E;
+}
+
+.star__glow {
+	background-color: #fcffd4;
+	border:1px solid #fcffd4;
+	-webkit-box-shadow: 0px 0px 8px 2px rgba(252,255,212,1);
+  -moz-box-shadow: 0px 0px 8px 2px rgba(252,255,212,1);
+  box-shadow: 0px 0px 8px 2px rgba(252,255,212,1);
+}
+
+@keyframes starflow {
+	from { top:0px; }
+	to { top:-4000px; }
+}
 /* End Karl's part */
 
 /* Mehdi's part  */
