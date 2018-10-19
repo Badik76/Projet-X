@@ -169,7 +169,6 @@ $(function() {
     });
     // End Mehdi's part2
 
-
   // Karl's part
  $('.parallax').parallax(); //activation du parallax
 
