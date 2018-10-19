@@ -177,7 +177,7 @@ h4 {
 
 .stars__control--small {
 	height: auto;
-	max-width: 80%;
+	max-width: 50%;
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -187,7 +187,7 @@ h4 {
 
 .stars__control--medium {
 	height: auto;
-	max-width: 80%;
+	max-width: 50%;
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -197,7 +197,7 @@ h4 {
 
 .stars__control--large {
 	height: auto;
-	max-width: 80%;
+	max-width: 50%;
 	position: absolute;
 	top: 0px;
 	left: 0px;
