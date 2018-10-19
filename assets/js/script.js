@@ -167,30 +167,8 @@ $(function() {
       addItemOnCart(item, true);
       M.toast({html: 'Produit ajouté au panier!'})
     });
-
-
     // End Mehdi's part2
 
-    // Manouel's part
-
-
-
-
-    // End Manouel's part
-
-    // Karl's part
-
-
-
-
-  // End Mehdi's part2
-
-  // Manouel's part
-
-
-
-
-  // End Manouel's part
 
   // Karl's part
  $('.parallax').parallax(); //activation du parallax
@@ -251,33 +229,47 @@ $(function() {
 			$(".stars__control--large").append('<span class="star__large" style="top:'+ rheight +'px;left:' + rwidth +'vw;"></span>');
 		}
 	} // fin de la fonction pour le background
+   //End Karl's part
+
   // Manouel's part
-  $(document).ready(function(){
+
   $('.carousel').carousel({
     indicators: true,
   });
   setInterval (function() {
         $('.carousel').carousel('next');
   }, 4000);
-  });
+
   // End of Manouel's
 
-  // Karl's part
-
-
-  // End Karl's part
-
-    // Mehdi's part
-
-
-
-
-    // End Mehdi's part
 
     // Magalie's part
+    $("#img1").mouseover(function() {
+        img1.src = "assets/img/avatar2.jpg";
+      })
+      $("#img1").mouseout(function() {
+        img1.src = "assets/img/avatar.jpg";
+      })
 
+      $("#img2").mouseover(function() {
+        img2.src = "assets/img/avatar2.jpg";
+      })
+      $("#img2").mouseout(function() {
+        img2.src = "assets/img/avatar.jpg";
+      })
 
+      $("#img3").mouseover(function() {
+        img3.src = "assets/img/avatar2.jpg";
+      })
+      $("#img3").mouseout(function() {
+        img3.src = "assets/img/avatar.jpg";
+      })
 
-
+      $("#img4").mouseover(function() {
+        img4.src = "assets/img/avatar2.jpg";
+      })
+      $("#img4").mouseout(function() {
+        img4.src = "assets/img/avatar.jpg";
+      })
     // End Magalie's part
   });
