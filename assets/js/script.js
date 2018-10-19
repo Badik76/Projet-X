@@ -78,7 +78,7 @@ $(function() {
       <tr id="line${cart[id].id}">
       <td data-label="Réf.">${cart[id].ref}</td>
       <td class="product-name" data-label="Produit">${cart[id].product}</td>
-      <td id="price${cart[id].id}" data-label="Prix">${Math.round(cart[id].price * cart[id].montant)}€</td>
+      <td id="price${cart[id].id}" data-label="Prix">${parseFloat(cart[id].price * cart[id].montant).toFixed(2)}€</td>
       <td data-label="Ajouter"><button id="addObjectMontant${cart[id].id}" class="waves-effect waves-light btn btn-floating green">
       <i class="material-icons">add_box</i>
       </button></td>
@@ -122,7 +122,8 @@ $(function() {
 
   // Mettre à jour le contenu du montant et du prix en fonction de l'id de la ligne
   function updateTexts(id) {
-    $('#price'+ (id + 1)).html(Math.round((cart[id].price * cart[id].montant) + '€'));
+    var calcul = parseFloat(cart[id].price * cart[id].montant).toFixed(2);
+    $('#price'+ (id + 1)).html(calcul + "€");
     $('#montant'+ (id + 1)).html(cart[id].montant);
   }
 
@@ -138,18 +139,23 @@ $(function() {
 
   // Génération des catégories
   for(var cats = 0; cats < categories.length; cats++) {
-    categ = categories[cats];
     $('#categoryList').append(`
-      <a id="${categ.id}" class="waves-effect waves-dark btn white dark-blue-text">${categ.name}</a>
-    `)
+      <a id="${categories[cats].id}" class="waves-effect waves-dark btn white dark-blue-text">${categories[cats].name}</a>
+    `);
+    $('#'+categories[cats].id).click(createCategoriesButtons(cats));
+  }
+
+  function createCategoriesButtons(id) {
+    console.log(id);
+    $('tr.productObjects').filter(document.getElementsByClassName(categories[id].id)).fadeOut();
   }
 
   // Génération des boutons ajouter au panier
   for(var prods = 0; prods < products.length; prods++) {
     prod = products[prods];
     $('#productList').append(`
-      <div class="col s12 m4">
-      <div class="card" data-item-category="${prod.category}">
+      <div class="col s12 m4" class="${prod.category}">
+      <div class="card">
       <div class="card-image">
       <img class="responsive-img-products" src="${prod.image}">
       </div>
@@ -162,7 +168,7 @@ $(function() {
       <div class="card-content">
       <div class="row">
       <div class="col s6"
-      <p>${Math.round(prod.price)}€</p>
+      <p>${parseFloat(prod.price).toFixed(2)}€</p>
       </div>
       <div class="col s6">
       <a class="btn addNewProductInCart right waves-effect waves-light dark-blue" data-item-name="${prod.product}"><i class="material-icons">shopping_cart</i> Ajouter au panier</a>
