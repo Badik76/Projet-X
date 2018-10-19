@@ -7,6 +7,25 @@ body {
 
 }
 
+.dark-blue {
+  background-color: #323c52;
+}
+
+.dark-blue-text {
+  color: #374664;
+}
+
+.soft-blue {
+  background-color: #0ce7fe;
+}
+
+.soft-blue-text {
+  color: #0ce7fe;
+}
+
+.footer-copyright {
+  margin-bottom: 0px;
+}
 /* Manouel's part  */
 
 
@@ -29,8 +48,53 @@ body {
 /* End Mehdi's part  */
 
 /* Magalie's part  */
+/* PRESENTATION */
+.pres-box {
+margin-top: 50px;
+}
+
+.card {
+  background-color: #2a3244;
+}
+
+/* FOOTER */
+i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
 
 
+.input-field > label {
+  color: #0ce7fe;
+}
+
+#contact {
+  margin-top: 100px;
+
+}
+
+#phone {
+  line-height: 50px;
+}
+
+.map-responsive {
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+}
+
+.map-responsive iframe {
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+
+#mail:hover {
+  color: white;
+}
 
 
 /* End Magalie's part  */

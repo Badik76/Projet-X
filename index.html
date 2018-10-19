@@ -17,7 +17,7 @@
   <link type="text/css" rel="stylesheet" href="./assets/css/style.css" />
   <!--Let browser know website is optimized for mobile-->
 </head>
-<body>
+<body class="dark-blue">
   <!-- Mehdi's part2 -->
 
 
@@ -46,10 +46,97 @@
   <!-- End Mehdi's part -->
 
   <!-- Magalie's part -->
-  <footer>
+  <div class="container-fluid presentation">
+    <h4 class="soft-blue-text center-align">Notre équipe</h4>
+    <div class="row">
+      <div class="col s3 pres-box">
+          <div class="card soft-blue-text center">
+            <img id="img1" class="responsive-img" src="assets/img/avatar.jpg" />
+        <p>Nom Prénom<br />Fonction</p>
+          </div>
+      </div>
+
+      <div class="col s3 pres-box">
+          <div class="card soft-blue-text center">
+          <img id="img2" class="responsive-img" src="assets/img/avatar.jpg" />
+        <p>Nom Prénom<br />Fonction</p>
+          </div>
+      </div>
 
 
-  </footer>
+      <div class="col s3 pres-box">
+          <div class="card soft-blue-text center">
+            <img id="img3" class="responsive-img" src="assets/img/avatar.jpg" />
+        <p>Nom Prénom<br />Fonction</p>
+          </div>
+      </div>
+
+
+      <div class="col s3 pres-box">
+          <div class="card soft-blue-text center">
+            <img id="img4" class="responsive-img" src="assets/img/avatar.jpg" />
+        <p>Nom Prénom<br />Fonction</p>
+          </div>
+      </div>
+    </div>
+      </div>
+
+
+
+<!-- FOOTER -->
+  <footer class="dark-blue">
+    <h4 class="soft-blue-text center-align">Contactez-nous</h4>
+    <div class="container-fluid">
+      <div class="row">
+        <form class="col s4">
+          <!-- <div class="row "> -->
+            <div class="input-field col s8">
+              <input id="first_name" type="text" class="validate ">
+              <label for="first_name soft-blue-text">First Name</label>
+            </div>
+          <!-- </div> -->
+          <!-- <div class="row "> -->
+            <div class="input-field col s8">
+              <input id="last_name" type="text" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+          <!-- </div> -->
+          <!-- <div class="row"> -->
+            <div class="input-field col s8">
+              <input id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+          <!-- </div> -->
+          <!-- <div class="row"> -->
+            <div class="input-field col s12">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">Descriptif de votre demande</label>
+            </div>
+          <!-- </div> -->
+          <button class="btn waves-effect dark-blue z-depth-2 right soft-blue-text" type="submit" name="action">Envoyer<i class="material-icons right">send</i>
+          </button>
+        </form>
+        <div class="col s4">
+          <p id="address" class="soft-blue-text center-align"><i class="fas fa-map-marker-alt"></i><strong>ALIVE WEB PROJECT</strong><br />2 rue Dombasle<br />76600 Le Havre</p>
+          <div class="map-responsive z-depth-5"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2592.026136893306!2d0.1314733508011465!3d49.484013279252395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e02e55af007f11%3A0xcb679803210d6c5c!2s2+Rue+de+Dombasle%2C+76600+Le+Havre!5e0!3m2!1sen!2sfr!4v1539865728537" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+        </div>
+        <div class="col s4">
+          <h5 class="soft-blue-text center-align" id=contact>Nos contacts</h5>
+          <p class="soft-blue-text center-align" id="phone">Tel : 09 86 27 17 04<br /><a href="mailto:contact@aswp.com" class="soft-blue-text" id="mail" >Mail : contact@awp.com</a><br />Horaires : du lundi au vendredi de 9h à 19h</p>
+          <div class="row">
+            <div class="col s6"><i class="fab fa-facebook-square soft-blue-text right"></i></div>
+            <div class="col s6"><i class="fab fa-linkedin soft-blue-text left"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright dark-blue z-depth-2">
+    <div class="container-fluid">
+      © 2018 Copyright Text
+    </div>
+  </div>
+</footer>
   <!-- End Magalie's part -->
 
   <!-- jQuery first, then Materialize.js, SweetAlert.js and Perso-->
