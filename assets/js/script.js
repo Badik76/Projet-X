@@ -1,37 +1,51 @@
-var cart = [];
 $(function() {
   // Mehdi's part2
+
+  // Déclaration des instances de Materialize
   $('.tap-target').tapTarget('open');
   $('.modal').modal();
+  $('.tooltipped').tooltip();
 
+
+  // Déclaration du panier vide au démarrage.
+  var cart = [];
+
+  // Liste des catégories
   var categories = [
     'eshop',
     'forum',
     'showcase',
-    'project'
+    'project',
+    'mobile'
   ]
 
+  // Liste des produits ( Si on en ajoute, l'HTML sera bien sûr aussi bien généré automatiquement <3)
   var products = [
-    {ref: 1, product: 'AliveCMS', price: 500, montant : 1, category : 'eshop'},
-    {ref: 2, product: 'WordPress', price:0, montant : 1, category : 'showcase'},
-    {ref: 3, product: 'PHPBB', price: 0, montant : 1, category : 'forum'},
-    {ref: 4, product: 'CMS', price: 0, montant : 1, category : 'project'},
-    {ref: 5, product: 'Test', price: 0, montant : 1, category : 'project'},
-    {ref: 5, product: 'Test2', price: 0, montant : 1, category : 'project'}
+    {ref: 1, product: 'AliveCMS', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price: 500, montant : 1, category : 'eshop'},
+    {ref: 2, product: 'WordPress', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price:140, montant : 1, category : 'showcase'},
+    {ref: 3, product: 'PHPBB', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price: 99.99, montant : 1, category : 'forum'},
+    {ref: 4, product: 'CMS', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price: 99.99, montant : 1, category : 'project'},
+    {ref: 5, product: 'Test', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price: 40, montant : 1, category : 'project'},
+    {ref: 5, product: 'Test2', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price: 15, montant : 1, category : 'project'}
   ];
+
+  // Fonction ajout du produit dans le panier
   function addItemOnCart(productName, force) {
     var itemOnList = false;
     var itemOnCart = false;
     var productItem, itemObject;
     force = (typeof force !== undefined) ? force : false;
+    // Savoir si le produit demandé existe dans la liste des produits
     for(var i = 0; i < products.length; i++) {
       if(productName === products[i].product) {
         itemOnList = true;
         productItem = i;
       }
     }
+    // Voir si le produit demandé est dans la liste du panier
     for(var i = 0; i < cart.length; i++) {
       if(cart[i] !== undefined) {
+        // Si le produit existe dans le panier, on augmente le montant.
         if(products[productItem].product === cart[i].product) {
           itemOnCart = true;
           cart[i].montant += 1;
@@ -53,12 +67,13 @@ $(function() {
     }
   }
 
+  // Fonction créer un contenu html à la suite du panier
   function addOnCartInHTML(id) {
     $('#shoppingCart').append(`
       <tr id="line${cart[id].id}">
       <td data-label="Réf.">${cart[id].ref}</td>
       <td class="product-name" data-label="Produit">${cart[id].product}</td>
-      <td id="price${cart[id].id}" data-label="Prix">${cart[id].price * cart[id].montant}€</td>
+      <td id="price${cart[id].id}" data-label="Prix">${Math.round(cart[id].price * cart[id].montant)}€</td>
       <td data-label="Ajouter"><button id="addObjectMontant${cart[id].id}" class="waves-effect waves-light btn btn-floating green">
       <i class="material-icons">add_box</i>
       </button></td>
@@ -73,6 +88,7 @@ $(function() {
       `
     );
 
+    // Ecouteur bouton ajouter pour un produit du panier
     $('#addObjectMontant'+cart[id].id).on('click', function() {
       if(cart[id].montant < 100) {
         cart[id].montant += 1;
@@ -81,6 +97,8 @@ $(function() {
         swal('Oops!', 'Impossible d\'ajouter plus de produits que 100.');
       }
     });
+
+    // Ecouteur bouton moins pour un produit du panier
     $('#removeObjectMontant'+cart[id].id).on('click', function() {
       if(cart[id].montant > 1) {
         cart[id].montant -= 1;
@@ -90,6 +108,7 @@ $(function() {
       }
     });
 
+    // Ecouteur bouton supprimer pour un produit du panier
     $('#deleteObject'+cart[id].id).on('click', function() {
       deleteOnCart(id);
       deleteObjects(id + 1);
@@ -97,87 +116,83 @@ $(function() {
 
   }
 
+  // Mettre à jour le contenu du montant et du prix en fonction de l'id de la ligne
   function updateTexts(id) {
-    $('#price'+ (id + 1)).html((cart[id].price * cart[id].montant) + '€');
+    $('#price'+ (id + 1)).html(Math.round((cart[id].price * cart[id].montant) + '€'));
     $('#montant'+ (id + 1)).html(cart[id].montant);
   }
 
-  function updateCartList() {
-    for(var i = 0;i < cart.length; i++) {
-      var cartObject = cart[i];
-      $('#shoppingCart').append(`
-        <tr id="line${cartObject.id}" class="cartlist">
-        <td data-label="Réf.">${cartObject.id}</td>
-        <td class="product-name" data-label="Produit">${cartObject.product}</td>
-        <td id="price${cartObject.id}" data-label="Prix">${cartObject.price * cartObject.montant}€</td>
-        <td data-label="Ajouter"><button data-add-on-cart="${cartObject.id}" class="addOne waves-effect waves-light btn btn-floating green">
-        <i class="material-icons">add_box</i>
-        </button></td>
-        <td id="montant${cartObject.id}" data-label="Montant">${cartObject.montant}</td>
-        <td data-label="Réduire"><button data-remove-on-cart="${cartObject.id}" class="removeOne waves-effect waves-light btn btn-floating orange">
-        <i class="material-icons">indeterminate_check_box</i>
-        </button></td>
-        <td data-label="Supprimer"><button data-delete-on-cart="${cartObject.id}" class="deleteOne waves-effect waves-light btn btn-floating red">
-        <i class="material-icons">delete</i>
-        </button></td>
-        </tr>
-        `
-      );
-    }
-  }
-  updateCartList();
-
-
-
+  // Supprimer un contenu du panier au niveau html
   function deleteObjects(id) {
     $('#line'+id).fadeOut().delay(2000).queue(function() { $(this).remove(); });;
   }
 
+  // Fonction supprimer du tableau dans le panier
   function deleteOnCart(id) {
     delete cart[id];
   }
-
+  // Génération des boutons ajouter au panier
   for(var prods = 0; prods < products.length; prods++) {
     prod = products[prods];
     $('#productList').append(`
-      <a class="addNewProductInCart waves-effect waves-light btn btn-large white dark-blue-text" data-item-name="${prod.product}"><i class="material-icons icon-dark-blue">shopping_cart</i> ${prod.product} à ${prod.price}€</a>
-      `);
-  }
+      <div class="col s12 m6 l4 xl3">
+      <div class="card">
+      <div class="card-image">
+      <img src="${prod.image}">
+      <span class="card-title"><span class="dark-blue-text">${prod.product}</span></span>
+      </div>
+      <div class="card-content">
+      <p>${prod.description}</p>
+      </div>
+      <div class="divider"></div>
+      <div class="card-content">
+      <div class="row">
+      <div class="col s6"
+      <p>${Math.round(prod.price)}€</p>
+      </div>
+      <div class="col s6">
+      <a class="btn addNewProductInCart right waves-effect waves-light dark-blue" data-item-name="${prod.product}"><i class="material-icons">shopping_cart</i> Ajouter au panier</a>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>`);
+    }
+    // Ecouteur bouton ajouter dans le panier
+    $('.addNewProductInCart').on('click', function() {
+      var item = this.dataset.itemName;
+      addItemOnCart(item, true);
+      M.toast({html: 'Produit ajouté au panier!'})
+    });
 
-  $('.addNewProductInCart').on('click', function() {
-    var item = this.dataset.itemName;
-    addItemOnCart(item, true);
-    M.toast({html: 'Produit ajouté au panier!'})
+
+    // End Mehdi's part2
+
+    // Manouel's part
+
+
+
+
+    // End Manouel's part
+
+    // Karl's part
+
+
+
+
+    // End Karl's part
+
+    // Mehdi's part
+
+
+
+
+    // End Mehdi's part
+
+    // Magalie's part
+
+
+
+
+    // End Magalie's part
   });
-
-
-  // End Mehdi's part2
-
-  // Manouel's part
-
-
-
-
-  // End Manouel's part
-
-  // Karl's part
-
-
-
-
-  // End Karl's part
-
-  // Mehdi's part
-
-
-
-
-  // End Mehdi's part
-
-  // Magalie's part
-
-
-
-
-  // End Magalie's part
-});
