@@ -21,7 +21,90 @@ i.icon-dark-blue {
   color: #374664;
 }
 /* Manouel's part  */
+header {
+  margin-bottom: 60px;
+  z-index : 500;
+}
+.nav-wrapper.dark-blue {
+  box-shadow:  2px 1px 5px 1px #0ce7fe;
+  border-bottom: 1px solid black;
+}
 
+.right.hide-on-med-and-down {
+  margin-right: 60px;
+}
+
+
+.brand-logo{
+  margin-left: 10px;
+  text-shadow: 1px 0px 1px #0ce7fe;
+}
+
+.fas.fa-cloud {
+  margin-left: 60px;
+  text-shadow: 1px 0px 1px #0ce7fe;
+}
+
+header nav a {
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.dropdown-content li {
+  font-size: 14px;
+  color: white;
+  padding: 0px 5px 5px;
+}
+
+.dropdown-content li {
+  background: #323c52;
+  color: black;
+}
+
+/* carousel */
+
+.carousel img {
+  z-index: 0;
+  opacity: 0.9;
+}
+.carousel.carousel-slider.carousel-item {
+  max-height: 700px;
+  vertical-align: center;
+
+}
+
+.carousel-fixed-item.center {
+  margin-bottom: 80px;
+}
+#slide2 h2 {
+  margin-bottom: 60px;
+}
+
+.carousel h2 {
+  color: #4facfe;
+  text-shadow: 1px 1px 1px black;
+}
+
+.carousel.carousel-slider .carousel-item h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 40px;
+  }
+
+.carousel p {
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+.carousel.carousel-slider .carousel-item p {
+    font-size: 1.2rem;
+}
+
+.btn.waves-effect {
+  box-shadow: 1px 1px 1px #0ce7fe;
+}
+/* End Manouel's part */
 
 
 

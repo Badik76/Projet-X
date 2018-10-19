@@ -250,8 +250,19 @@ $(function() {
 		{
 			$(".stars__control--large").append('<span class="star__large" style="top:'+ rheight +'px;left:' + rwidth +'vw;"></span>');
 		}
-	} //fin de la fonction pour le background
+	} // fin de la fonction pour le background
+  // Manouel's part
+  $(document).ready(function(){
+  $('.carousel').carousel({
+    indicators: true,
+  });
+  setInterval (function() {
+        $('.carousel').carousel('next');
+  }, 4000);
+  });
+  // End of Manouel's
 
+  // Karl's part
 
 
   // End Karl's part
