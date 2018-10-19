@@ -62,12 +62,16 @@ header nav a {
   background: #323c52;
   color: black;
 }
-
 /* carousel */
 
+.carousel {
+  box-shadow: 2px 1px 5px 1px black;
+  height: 450px;
+}
 .carousel img {
   z-index: 0;
   opacity: 0.9;
+  width: auto;
 }
 .carousel.carousel-slider.carousel-item {
   max-height: 700px;
@@ -88,10 +92,10 @@ header nav a {
 }
 
 .carousel.carousel-slider .carousel-item h2 {
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: 40px;
-  }
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 40px;
+}
 
 .carousel p {
   color: white;
@@ -173,7 +177,7 @@ h4 {
 
 .stars__control--small {
 	height: auto;
-	width: 100%;
+	max-width: 80%;
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -183,7 +187,7 @@ h4 {
 
 .stars__control--medium {
 	height: auto;
-	width: 100%;
+	max-width: 80%;
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -193,7 +197,7 @@ h4 {
 
 .stars__control--large {
 	height: auto;
-	width: 100%;
+	max-width: 80%;
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -247,6 +251,7 @@ h4 {
   position: fixed;
   right: 50px;
   bottom: 50px;
+  z-index:400000;
 }
 
 .mr-3 {
