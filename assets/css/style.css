@@ -31,7 +31,6 @@ i.icon-dark-blue {
 
 
 
-
 /* End Karl's part */
 
 /* Mehdi's part  */
@@ -85,7 +84,20 @@ i.icon-dark-blue {
   }
 }
 
+.responsive-img-products {
+  max-width: 100%;
+  height:150px;
+}
 
+.productTitle {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.rem13 {
+  font-size : 1.4rem;
+}
 
 /* End Mehdi's part  */
 

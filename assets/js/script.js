@@ -21,12 +21,14 @@ $(function() {
 
   // Liste des produits ( Si on en ajoute, l'HTML sera bien sûr aussi bien généré automatiquement <3)
   var products = [
-    {ref: 1, product: 'AliveCMS', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price: 500, montant : 1, category : 'eshop'},
-    {ref: 2, product: 'WordPress', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price:140, montant : 1, category : 'showcase'},
-    {ref: 3, product: 'PHPBB', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price: 99.99, montant : 1, category : 'forum'},
+    {ref: 1, product: 'GeniusBazaar', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png', description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.', price: 500, montant : 1, category : 'eshop'},
+    {ref: 2, product: 'MaBoutikBio', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png', description : 'MaBoutikBio est un site de vente en ligne de produits bio.', price:140, montant : 1, category : 'eshop'},
+    {ref: 3, product: 'MaDecoTendance', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png', description : '', price: 99.99, montant : 1, category : 'eshop'},
     {ref: 4, product: 'CMS', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price: 99.99, montant : 1, category : 'project'},
     {ref: 5, product: 'Test', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price: 40, montant : 1, category : 'project'},
-    {ref: 5, product: 'Test2', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price: 15, montant : 1, category : 'project'}
+    {ref: 5, product: 'Test2', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price: 15, montant : 1, category : 'project'},
+    {ref: 5, product: 'CMS de ouf', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price: 15, montant : 1, category : 'project'},
+    {ref: 5, product: 'CMS de ouf2', image: 'https://ressources.blogdumoderateur.com/2017/07/pretty-links-612x419.jpg', description : 'Ceci est une description intéressente!', price: 15, montant : 1, category : 'project'}
   ];
 
   // Fonction ajout du produit dans le panier
@@ -138,9 +140,10 @@ $(function() {
       <div class="col s12 m6 l4 xl3">
       <div class="card">
       <div class="card-image">
-      <img src="${prod.image}">
-      <span class="card-title"><span class="dark-blue-text">${prod.product}</span></span>
+      <img class="responsive-img-products" src="${prod.image}">
       </div>
+      <p class="center-align card-title truncate dark-blue-text rem13">${prod.product}</p>
+      <div class="divider"></div>
       <div class="card-content">
       <p>${prod.description}</p>
       </div>
