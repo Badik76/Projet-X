@@ -3,9 +3,17 @@ $(function() {
 
   // Déclaration des instances de Materialize
   $('.tap-target').tapTarget('open');
-  $('.modal').modal();
+  $('.modal').modal({ onOpenStart : function() { $('.modal-trigger').fadeOut(); }, onCloseStart : function() { $('.modal-trigger').fadeIn(); } });
   $('.tooltipped').tooltip();
+  $('select').formSelect();
 
+  $('.modal-trigger').on('click', function() {
+    $(this).fadeOut();
+  });
+
+  $('.modal-close').on('click', function() {
+    $('.modal-trigger').fadeIn();
+  });
 
   // Déclaration du panier vide au démarrage.
   var cart = [];
@@ -205,7 +213,7 @@ $(function() {
         cart[id].montant += 1;
         updateTexts(id);
       } else {
-        swal('Oops!', 'Impossible d\'ajouter plus de produits que 100.');
+        swal('Oops!', 'Impossible d\'ajouter plus de produits que 100.', 'error');
       }
     });
 
@@ -215,7 +223,7 @@ $(function() {
         cart[id].montant -= 1;
         updateTexts(id);
       } else {
-        swal('Oops!', 'Pour supprimer une valeur, merci d\'appuyer sur le bouton supprimer. La valeur ne peut pas être en dessous de 1.');
+        swal('Oops!', 'Pour supprimer une valeur, merci d\'appuyer sur le bouton supprimer. La valeur ne peut pas être en dessous de 1.', 'error');
       }
     });
 
@@ -289,7 +297,7 @@ $(function() {
       <p>${parseFloat(prod.price).toFixed(2)}€</p>
       </div>
       <div class="col s6">
-      <a class="btn addNewProductInCart right waves-effect waves-light dark-blue tooltipped btn-floating" data-position="top" data-tooltip="Ajouter au panier" data-item-name="${prod.product}"><i class="material-icons">shopping_cart</i></a>
+      <a class="btn addNewProductInCart right waves-effect waves-light dark-blue tooltipped btn-floating" data-position="top" data-tooltip="Ajouter au panier" data-item-name="${prod.product}"><i class="material-icons">add_shopping_cart</i></a>
       </div>
       </div>
       </div>
@@ -303,6 +311,136 @@ $(function() {
       M.toast({html: 'Produit ajouté au panier!'})
     });
     $('.tooltipped').tooltip();
+
+    function getRealCartLength() {
+      var cartLength = 0;
+      for(var i = 0;i < cart.length; i++) {
+        if(cart[i] !== undefined) {
+          cartLength++;
+        }
+      }
+      return cartLength;
+    }
+
+    function getTotalCartPrice() {
+      var total = 0;
+      for(var i = 0; i < cart.length; i++) {
+        if(cart[i] !== undefined) {
+          total += cart[i].montant * cart[i].price;
+        }
+      }
+      return total;
+    }
+
+    var accountCreated = false;
+    var session = {};
+
+    $('#goToAccountCreation').on('click', function() {
+      var totalPrice = getTotalCartPrice();
+      $('#totalCartPrice').text('Le total est de : ' + totalPrice + '€');
+      if(getRealCartLength() > 0) {
+        if(accountCreated === false) {
+          $('#cartModalContent').slideUp();
+          $('#accountModalContent').slideDown();
+        } else {
+          $('#cartModalContent').slideUp();
+          $('#paymentMethodsModalContent').slideDown();
+        }
+      } else {
+        swal('Oops!', 'Le panier est vide!', 'error');
+      }
+    });
+
+    $('#returnToCartModalContent').on('click', function() {
+      //GoToAccountCreation
+      $('#cartModalContent').slideDown();
+      $('#accountModalContent').slideUp();
+    });
+
+    function parseChar(text){
+			return text.substr(0,1).toUpperCase() + text.substr(1,text.length).toLowerCase();
+    }
+
+    $('#goToPaymentMethods').on('click', function() {
+      //AccountValidator
+      var $lastName = $('#lastName').val();
+      var $firstName = $('#firstName').val();
+      var $email = $('#email').val();
+      var $phoneNumber = $('#phoneNumber').val();
+      var $password = $('#password').val();
+      var $rePassword = $('#rePassword').val();
+      var regexBase = /^[A-Za-zÂ-ÿ-]+$/;
+      var regexMail = /^[A-Za-z0-9-_.]+[@][A-Za-z0-9-_.]+[.][A-Za-z]+$/;
+      var regexPhoneNumber = /^[\d]+$/
+      if(regexBase.test($lastName) && regexBase.test($firstName) && regexMail.test($email) && regexPhoneNumber.test($phoneNumber) && $password !== "") {
+        if($password.length > 6) {
+          if($password === $rePassword) {
+            if(accountCreated !== true) {
+              accountCreated = true;
+              session.lastName = $lastName;
+              session.firstName = $firstName;
+              session.email = $email;
+              session.password = $password;
+              session.phoneNumber = $phoneNumber;
+              swal('Youpi!', 'Bienvenue sur AWP '+parseChar(session.firstName)+' '+parseChar(session.lastName)+'! Création du compte réussi!', 'success');
+              $('#accountModalContent').slideUp();
+              $('#paymentMethodsModalContent').slideDown();
+            } else {
+              swal('Oops!', 'Erreur interne...', 'error');
+            }
+          } else {
+            swal('Oops!', 'Les 2 mots de passes ne correspondent pas!')
+          }
+        } else {
+          swal('Oops!', 'Il est nécessaire d\'avoir un mot de passe supérieur à 6 caractères!')
+        }
+      } else {
+        swal('Oops!', 'Merci de bien vouloir remplir correctement tous les champs!', 'error');
+      }
+    });
+
+    $('#returnToAccount').on('click', function() {
+      $('#cartModalContent').slideDown();
+      $('#paymentMethodsModalContent').slideUp();
+    });
+    var essais = 0;
+    $('#paymentValidator').on('click', function() {
+      var $cardNumber = $('#cardNumber').val();
+      var $cardTitular = $('#cardTitular').val();
+      var $cardExpiration = $('#cardExpiration').val();
+      var $cardType = $('#cardType').val();
+      var $cardCVV = $('#cardCVV').val();
+      var cardObject = new CreditCard();
+      var cardExpirationSplitted = $cardExpiration.split('/');
+      if(cardObject.isValid($cardNumber)) {
+        if(cardObject.isExpirationDateValid(cardExpirationSplitted[0], cardExpirationSplitted[1])) {
+          if($cardType === cardObject.getCreditCardNameByNumber($cardNumber)) {
+            if(cardObject.isSecurityCodeValid($cardNumber, $cardCVV)) {
+              if(essais < 4) {
+                cart = [];
+                $('#shoppingCart').html('');
+                var totalPrice = getTotalCartPrice();
+                $('#totalCartPrice').text('Le total est de : ' + totalPrice + '€');
+                swal('Youpi!', 'Paiement accepté!', 'success');
+                $('#paymentMethodsModalContent').slideUp();
+                $('#cartModalContent').slideDown();
+              } else {
+                swal('Oops', 'Vous êtes soupçonné de brute-force! Si ceci est une erreur, contactez un administrateur!', 'error');
+              }
+            } else {
+              swal('Oops!', 'Le code de la carte est invalide!', 'error');
+              essais++;
+            }
+          } else {
+            swal('Oops!', 'Le type de carte est invalide!');
+          }
+        } else {
+          swal('La date d\'expiration n\'est pas valide!');
+        }
+      } else {
+        swal('Oops!', 'La carte bancaire entrée est invalide!', 'error');
+      }
+    });
     // End Mehdi's part2
 
     // Karl's part

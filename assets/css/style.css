@@ -309,12 +309,36 @@ h4 {
   margin-right:auto;
 }
 
+#accountModalContent {
+  display: none;
+}
+
+#paymentMethodsModalContent {
+  display: none;
+}
+
 .rem13 {
   font-size : 1.4rem;
 }
 
+.rem20 {
+  font-size : 2rem;
+}
+
 span.badge {
   border-radius : 10px;
+}
+
+.btn:hover {
+  color:#fff;
+}
+
+a > i.fab {
+  transition: 0.3s;
+}
+
+a > i.fab:hover {
+  color:#fff;
 }
 
 /* End Mehdi's part  */

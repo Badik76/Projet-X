@@ -23,27 +23,115 @@
   <div class="stars__control--large"></div>
   <!-- Mehdi's part2 -->
   <div id="shoppingCartModal" class="modal">
-    <div class="modal-content">
-      <h1><i class="material-icons icon-dark-blue">shopping_cart</i> Panier</h1>
-      <table>
-        <thead>
-          <tr>
-            <th scope="col">Réf.</th>
-            <th scope="col">Produit</th>
-            <th scope="col">Prix</th>
-            <th scope="col">Ajouter</th>
-            <th scope="col">Montant</th>
-            <th scope="col">Réduire</th>
-            <th scope="col">Supprimer</th>
-          </tr>
-        </thead>
-        <tbody id="shoppingCart" class="center-align">
-        </tbody>
-      </table>
+
+    <div id="cartModalContent">
+      <div class="modal-content">
+        <h2 class="rem20"><i class="material-icons icon-dark-blue">shopping_cart</i> Panier</h2>
+        <div class="divider"></div>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Réf.</th>
+              <th scope="col">Produit</th>
+              <th scope="col">Prix</th>
+              <th scope="col">Ajouter</th>
+              <th scope="col">Montant</th>
+              <th scope="col">Réduire</th>
+              <th scope="col">Supprimer</th>
+            </tr>
+          </thead>
+          <tbody id="shoppingCart" class="center-align">
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <div class="container-fluid">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat soft-white-text mr-3">Revenir</a>
+          <a id="goToAccountCreation" href="#!" class="waves-effect waves-green btn-flat dark-blue white-text mr-3">Valider</a>
+        </div>
+      </div>
     </div>
-    <div class="modal-footer">
-      <div class="container-fluid">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat dark-blue white-text mr-3">Payer</a>
+    <div id="accountModalContent">
+      <div class="modal-content">
+        <h2 class="rem20"><i class="material-icons icon-dark-blue">account_box</i> Créer son compte</h2>
+        <div class="divider"></div>
+        <form>
+          <div class="row">
+            <div class="input-field col s12 m6">
+              <input id="firstName" type="text" class="validate" />
+              <label class="black-text" for="firstName">Prénom</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="lastName" type="text" class="validate" />
+              <label class="black-text" for="lastName">Nom de famille</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="email" type="email" class="validate" />
+              <label class="black-text" for="email">Adresse Mail</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="phoneNumber" type="text" class="validate" />
+              <label class="black-text" for="phoneNumber">Téléphone</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="password" type="text" class="validate" />
+              <label class="black-text" for="password">Mot de passe</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input id="rePassword" type="text" class="validate" />
+              <label class="black-text" for="rePassword">Retappez le mot de passe</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="container-fluid">
+          <a id="returnToCartModalContent" href="#!" class="waves-effect waves-green btn-flat soft-white-text mr-3">Retour</a>
+          <a id="goToPaymentMethods" href="#!" class="waves-effect waves-green btn-flat dark-blue white-text mr-3">Poursuivre</a>
+        </div>
+      </div>
+    </div>
+    <div id="paymentMethodsModalContent">
+      <div class="modal-content">
+        <h2 class="rem20"><i class="material-icons icon-dark-blue">credit_card</i> Formulaire de paiement</h2>
+        <div class="divider"></div>
+        <div class="row">
+          <p id="totalCartPrice" class="flow-text"></p>
+          <div class="input-field col s12 m8">
+            <input id="cardNumber" type="text">
+            <label class="black-text" for="cardNumber">Numéro de carte bleue</label>
+          </div>
+          <div class="input-field col s12 m4">
+            <input id="cardTitular" type="text">
+            <label class="black-text" for="cardTitular">Nom du titulaire</label>
+          </div>
+          <div class="input-field col s12 m4">
+            <input id="cardExpiration" type="text">
+            <label class="black-text" for="cardExpiration">Expiration ( Format : XX/XXXX )</label>
+          </div>
+          <div class="input-field col s12 m4">
+            <input id="cardCVV" type="text">
+            <label class="black-text" for="cardCVV">CVV ( au dos de votre carte )</label>
+          </div>
+          <div class="input-field col s12 m4">
+            <select id="cardType">
+              <option value="Nothing" disabled selected>Type de carte</option>
+              <option value="Visa">VISA</option>
+              <option value="Mastercard">MasterCard</option>
+              <option value="Amex">American Express</option>
+              <option value="Aura">Maestro</option>
+              <option value="Discover">Discover</option>
+              <option value="Elo">ELO</option>
+            </select>
+            <label>Type de carte</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="container-fluid">
+          <a id="returnToAccount" href="#!" class="waves-effect waves-green btn-flat soft-white-text mr-3">Annuler</a>
+          <a id="paymentValidator" href="#!" class="waves-effect waves-green btn-flat dark-blue white-text mr-3">Payer</a>
+        </div>
       </div>
     </div>
   </div>
@@ -140,22 +228,22 @@
       </div>
       <div class="row bgc1">
         <h4 class="soft-white">Nos Offres</h4>
-        <div class="col s6 m6 l6">
+        <div class="col s12 m6">
           <i class="large material-icons hicon soft-blue-text">devices_other</i>
           <h5 class="soft-blue-text">Site Vitrine</h5>
           <p class="soft-white">Intégration de maquettes - Paramétrage du CMS<br/>(Wordpress, Drupal) Intégration de contenu</p>
         </div>
-        <div class="col s6 m6 l6">
+        <div class="col s12 m6">
           <i class="large material-icons hicon soft-blue-text">local_atm</i>
           <h5 class="soft-blue-text">Site e-Commerce</h5>
           <p class="soft-white">Intégration de maquettes - Paramétrage du CMS<br/>(Prestashop) ou développement sur-mesure</p>
         </div>
-        <div class="col s6 m6 l6">
+        <div class="col s12 m6">
           <i class="large material-icons hicon soft-blue-text">developer_board</i>
           <h5 class="soft-blue-text">Site Personnalisé</h5>
           <p class="soft-white">Création d'un site de A à Z, cahier des charges,<br /> framework, développement sur-mesure</p>
         </div>
-        <div class="col s6 m6 l6">
+        <div class="col s12 m6">
           <i class="large material-icons hicon soft-blue-text">developer_mode</i>
           <h5 class="soft-blue-text">Applications et outils mobiles</h5>
           <p class="soft-white">Cahier des charges, wireframes,<br /> intégration de maquettes, développement fonctionnel</p>
@@ -193,8 +281,6 @@
             <a class="btn-floating btn-large halfway-fab waves-effect waves-light pulse tooltipped" data-position="top" data-tooltip="Voir le site de Bee Le Havre" target="_blank" href="https://beelehavre.com/home-fr.html" ><i class="material-icons">add</i></a>
           </div>
         </div>
-      </div>
-      <div class="row bgc">
         <div class="col s12 m6 l4">
           <div class="card">
             <div class="card-image">
@@ -235,109 +321,110 @@
     <!-- Mehdi's part -->
     <div class="container-fluid center">
       <div class="row bgc">
-      <h4 class="soft-white">Notre catalogue</h4>
-      <div class="row" id="categoryList">
-      </div>
-      <div class="row" id="productList">
+        <h4 class="soft-white">Notre catalogue</h4>
+        <div class="row" id="categoryList">
+        </div>
+        <div class="row" id="productList">
+        </div>
       </div>
     </div>
-  </div>
 
     <!-- End Mehdi's part -->
     <div class="parallax-container">
       <div class="parallax"><img src="assets/img/paralax3.jpg"></div>
     </div>
     <!-- Magalie's part -->
-    <div class="container-fluid presentation">
-      <h4 class="soft-white center-align">Notre équipe</h4>
-      <div class="row">
-        <div class="col s12 m3 pres-box">
-          <div class="cardm soft-blue-text center">
-            <img id="img1" class="responsive-img" src="assets/img/avatar.jpg" />
-            <p>Karl LEVASSEUR<br />Chef Projet Web</p>
-          </div>
-        </div>
-
-        <div class="col s12 m3 pres-box">
-          <div class="cardm soft-blue-text center">
-            <img id="img2" class="responsive-img" src="assets/img/avatar.jpg" />
-            <p>Mehdi ROUIS<br />Développeur Web</p>
-          </div>
-        </div>
-
-
-        <div class="col s12 m3 pres-box">
-          <div class="cardm soft-blue-text center">
-            <img id="img3" class="responsive-img" src="assets/img/avatar.jpg" />
-            <p>Manuel ROMERO<br />Développeur Web</p>
-          </div>
-        </div>
-
-
-        <div class="col s12 m3 pres-box">
-          <div class="cardm soft-blue-text center">
-            <img id="img4" class="responsive-img" src="assets/img/avatar.jpg" />
-            <p>Magalie KABELAAN<br />Développeuse Web</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="dark-blue">
-      <h4 class="soft-white center-align">Contactez-nous</h4>
-      <div class="container-fluid">
+    <div class="row bgc">
+      <div class="container-fluid presentation">
+        <h4 class="soft-white center-align">Notre équipe</h4>
         <div class="row">
-          <div class="col s12 m4">
-            <form>
-              <div class="input-field">
-                <input id="first_name" type="text" class="validate soft-white">
-                <label for="first_name">First Name</label>
-              </div>
-              <div class="input-field">
-                <input id="last_name" type="text" class="validate soft-white">
-                <label for="last_name">Last Name</label>
-              </div>
-              <div class="input-field">
-                <input id="email" type="email" class="validate soft-white">
-                <label for="email">Email</label>
-              </div>
-              <div class="input-field">
-                <textarea id="textarea1" class="materialize-textarea soft-white"></textarea>
-                <label for="textarea1">Descriptif de votre demande</label>
-              </div>
-              <div class="row">
-                <button class="btn waves-effect dark-blue z-depth-2 right soft-blue-text left" type="submit" name="action">Envoyer<i class="material-icons right">send</i></button>
-              </div>
-            </form>
+          <div class="col s12 m3 pres-box">
+            <div class="cardm soft-blue-text center">
+              <img id="img1" class="responsive-img" src="assets/img/avatar.jpg" />
+              <p>Karl LEVASSEUR<br />Chef Projet Web</p>
+            </div>
           </div>
-          <div class="col s12 m4">
-            <p id="address" class="soft-blue-text center-align"><i class="fas fa-map-marker-alt"></i><strong>ALIVE WEB PROJECT</strong><br />2 rue Dombasle<br />76600 Le Havre</p>
-            <div class="map-responsive z-depth-5"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2592.026136893306!2d0.1314733508011465!3d49.484013279252395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e02e55af007f11%3A0xcb679803210d6c5c!2s2+Rue+de+Dombasle%2C+76600+Le+Havre!5e0!3m2!1sen!2sfr!4v1539865728537" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+
+          <div class="col s12 m3 pres-box">
+            <div class="cardm soft-blue-text center">
+              <img id="img2" class="responsive-img" src="assets/img/avatar.jpg" />
+              <p>Mehdi ROUIS<br />Développeur Web</p>
+            </div>
           </div>
-          <div class="col s12 m4">
-            <h5 class="soft-white center-align" id=contact>Nous joindre</h5>
-            <p class="soft-blue-text center-align" id="phone">Tel : 09 86 27 17 04<br /><a href="mailto:contact@aswp.com" class="soft-blue-text" id="mail" >Mail : contact@awp.com</a><br />Horaires : du lundi au vendredi de 9h à 19h</p>
-            <div class="row">
-              <div class="col s6"><i class="fab fa-facebook-square soft-blue-text right"></i></div>
-              <div class="col s6"><i class="fab fa-linkedin soft-blue-text left"></i></div>
+
+
+          <div class="col s12 m3 pres-box">
+            <div class="cardm soft-blue-text center">
+              <img id="img3" class="responsive-img" src="assets/img/avatar.jpg" />
+              <p>Manuel ROMERO<br />Développeur Web</p>
+            </div>
+          </div>
+
+
+          <div class="col s12 m3 pres-box">
+            <div class="cardm soft-blue-text center">
+              <img id="img4" class="responsive-img" src="assets/img/avatar.jpg" />
+              <p>Magalie KABELAAN<br />Développeuse Web</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="footer-copyright dark-blue z-depth-2">
-      <div class="container-fluid">
-        2018-Made by Badik, Esska, Heisenberg and Krevette with <i class="fas fa-heart"></i>
+    <footer class="page-footer dark-blue">
+      <div class="row bgc center-align">
+        <div class="container-fluid">
+          <h4 class="soft-white">Nous contacter</h4>
+          <div class="col s12 m4">
+            <h5 class="white-text">Formulaire de contact</h5>
+            <div class="divider"></div>
+            <form>
+              <div class="input-field">
+                <input id="contactLastName" type="text" class="validate soft-white">
+                <label for="contactLastName">Nom</label>
+              </div>
+              <div class="input-field">
+                <input id="contactFirstName" type="text" class="validate soft-white">
+                <label for="contactFirstName">Prénom</label>
+              </div>
+              <div class="input-field">
+                <input id="contactMail" type="email" class="validate soft-white">
+                <label for="contactMail">Email</label>
+              </div>
+              <div class="input-field">
+                <textarea id="contactContent" class="materialize-textarea soft-white"></textarea>
+                <label for="contactContent">Descriptif de votre demande</label>
+              </div>
+              <button class="btn waves-effect dark-blue z-depth-2 right soft-blue-text left col s12" type="submit" name="action">Envoyer<i class="material-icons right">send</i></button>
+            </form>
+          </div>
+          <div class="col s12 m4">
+            <h5 class="white-text">Nous retrouver</h5>
+            <div class="divider"></div>
+            <p id="address" class="soft-blue-text center-align"><i class="fas fa-map-marker-alt"></i><strong>AliveWebProject - The Web Community</strong><br />2 rue Dombasle<br />76600 Le Havre</p>
+            <div class="map-responsive z-depth-5"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2592.026136893306!2d0.1314733508011465!3d49.484013279252395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e02e55af007f11%3A0xcb679803210d6c5c!2s2+Rue+de+Dombasle%2C+76600+Le+Havre!5e0!3m2!1sen!2sfr!4v1539865728537" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+          </div>
+          <div class="col s12 m4">
+            <h5 class="white-text">Nous joindre</h5>
+            <div class="divider"></div>
+            <p class="soft-blue-text center-align" id="phone">Tel : 09 86 27 17 04<br /><a href="mailto:contact@awp.com" class="soft-blue-text" id="mail" >Mail : contact@awp.com</a><br />Horaires : du lundi au vendredi de 9h à 19h</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
-  <!-- End Magalie's part -->
+      <div class="footer-copyright">
+        <div class="container">
+          2018-Made by Badik 🖕, Èsska, Heisenberg and Krevette with <i class="fas fa-heart"></i>
+          <a class="grey-text text-lighten-4 right" href="#!"><i class="fab fa-facebook-square soft-blue-text"></i></a>
+          <a class="grey-text text-lighten-4 right" href="#!"><i class="fab fa-linkedin soft-blue-text"></i></a>
+        </div>
+      </div>
+    </footer>
+    <!-- End Magalie's part -->
 
-  <!-- jQuery first, then Materialize.js, SweetAlert.js and Perso-->
-  <script src="assets/import/jQuery/jquery-3.3.1.min.js"></script>
-  <script src="assets/import/Materialize/js/materialize.min.js"></script>
-  <script src="assets/import/SweetAlert/sweetalert.min.js"></script>
-  <script src="assets/js/script.js"></script>
-</body>
-</html>
+    <!-- jQuery first, then Materialize.js, SweetAlert.js and Perso-->
+    <script src="assets/import/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="assets/import/CreditCardValidator/creditcard.js"></script>
+    <script src="assets/import/Materialize/js/materialize.min.js"></script>
+    <script src="assets/import/SweetAlert/sweetalert.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+  </html>
