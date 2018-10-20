@@ -312,6 +312,11 @@ h4 {
 .rem13 {
   font-size : 1.4rem;
 }
+
+span.badge {
+  border-radius : 10px;
+}
+
 /* End Mehdi's part  */
 
 /* Magalie's part  */

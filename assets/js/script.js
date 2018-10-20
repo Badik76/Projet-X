@@ -13,27 +13,133 @@ $(function() {
   // Liste des catégories
   var categories = [
     {name : 'E-Commerce', id : 'eshop'},
-    {name : 'Forum', id : 'forum'},
     {name : 'Sites Vitrines', id : 'showcase'},
-    {name : 'Applications Mobile', id : 'mobile'},
+    {name : 'Forums', id : 'forum'},
+    {name : 'Applications Mobile', id : 'mobile'}
   ];
 
   // Liste des produits ( Si on en ajoute, l'HTML sera bien sûr aussi bien généré automatiquement <3)
   var products = [
-    {ref: 1, product: 'GeniusBazaar', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png', description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.', price: 500, montant : 1, category : 'eshop'},
-    {ref: 2, product: 'MaBoutikBio', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png', description : 'MaBoutikBio est un site de vente en ligne de produits bio.', price:140, montant : 1, category : 'eshop'},
-    {ref: 3, product: 'MaDecoTendance', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png', description : 'MaDecoTendance est un site de vente en ligne de décoration.', price: 99.99, montant : 1, category : 'eshop'},
-    {ref: 1, product: 'GeniusBazaar', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png', description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.', price: 500, montant : 1, category : 'forum'},
-    {ref: 2, product: 'MaBoutikBio', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png', description : 'MaBoutikBio est un site de vente en ligne de produits bio.', price:140, montant : 1, category : 'forum'},
-    {ref: 3, product: 'MaDecoTendance', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png', description : 'MaDecoTendance est un site de vente en ligne de décoration.', price: 99.99, montant : 1, category : 'forum'},
-    {ref: 1, product: 'GeniusBazaar', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png', description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.', price: 500, montant : 1, category : 'showcase'},
-    {ref: 2, product: 'MaBoutikBio', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png', description : 'MaBoutikBio est un site de vente en ligne de produits bio.', price:140, montant : 1, category : 'showcase'},
-    {ref: 3, product: 'MaDecoTendance', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png', description : 'MaDecoTendance est un site de vente en ligne de décoration.', price: 99.99, montant : 1, category : 'showcase'},
-    {ref: 1, product: 'GeniusBazaar', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png', description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.', price: 500, montant : 1, category : 'mobile'},
-    {ref: 2, product: 'MaBoutikBio', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png', description : 'MaBoutikBio est un site de vente en ligne de produits bio.', price:140, montant : 1, category : 'mobile'},
-    {ref: 3, product: 'MaDecoTendance', image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png', description : 'MaDecoTendance est un site de vente en ligne de décoration.', price: 99.99, montant : 1, category : 'mobile'},
+    {
+      ref: 1,
+      product: 'GeniusBazaar',
+      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png',
+      description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.',
+      price: 500,
+      montant : 1,
+      category : 'eshop',
+      categoryName : 'E-Commerce'
+    },
+    {
+      ref: 2,
+      product: 'MaBoutikBio',
+      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png',
+      description : 'MaBoutikBio est un site de vente en ligne de produits bio.',
+      price:140,
+      montant : 1,
+      category : 'eshop',
+      categoryName : 'E-Commerce'
+    },
+    {
+      ref: 3, product: 'MaDecoTendance',
+      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png',
+      description : 'MaDecoTendance est un site de vente en ligne de décoration.',
+      price: 99.99,
+      montant : 1,
+      category : 'eshop',
+      categoryName : 'E-Commerce'
+    },
+    {
+      ref: 4,
+      product: 'L\'atelier du coteau',
+      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502786311074349056/Capture_decran_de_2018-10-19_12-11-37.png',
+      description : 'L\'Atelier du coteau propose des ateliers de Danse, linguistiques et yoga pour tous.',
+      price: 500,
+      montant : 1,
+      category : 'showcase',
+      categoryName : 'Site Vitrine'
+    },
+    {
+      ref: 5,
+      product: 'Jeff Bridges Sleeping Tapes',
+      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502786946343501825/Capture_decran_de_2018-10-19_12-14-02.png',
+      description : 'Jeff Bridges Sleeping Tapes est un compositeur qui propose ses sons en ligne.',
+      price:140,
+      montant : 1,
+      category : 'showcase',
+      categoryName : 'Site Vitrine'
+    },
+    {
+      ref: 6,
+      product: 'Seattle Cider',
+      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502788421610242048/Capture_decran_de_2018-10-19_12-20-11.png',
+      description : 'Seattle Cider met en avant son cidre qui est vendu à Seattle.',
+      price: 99.99,
+      montant : 1,
+      category : 'showcase',
+      categoryName : 'Site Vitrine'
+    },
+    {
+      ref: 7,
+      product: 'GeniusBazaar',
+      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png',
+      description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.',
+      price: 500,
+      montant : 1,
+      category : 'forum',
+      categoryName : 'Forum'
+    },
+    {
+      ref: 8,
+      product: 'MaBoutikBio',
+      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png',
+      description : 'MaBoutikBio est un site de vente en ligne de produits bio.',
+      price:140,
+      montant : 1,
+      category : 'forum',
+      categoryName : 'Forum'
+    },
+    {
+      ref: 9,
+      product: 'MaDecoTendance',
+      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png',
+      description : 'MaDecoTendance est un site de vente en ligne de décoration.',
+      price: 99.99,
+      montant : 1,
+      category : 'forum',
+      categoryName : 'Forum'
+    },
+    {
+      ref: 10,
+      product: 'GeniusBazaar',
+      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png',
+      description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.',
+      price: 500,
+      montant : 1,
+      category : 'mobile',
+      categoryName : 'Mobile'
+    },
+    {
+      ref: 11,
+      product: 'MaBoutikBio',
+      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png',
+      description : 'MaBoutikBio est un site de vente en ligne de produits bio.',
+      price:140,
+      montant : 1,
+      category : 'mobile',
+      categoryName : 'Mobile'
+    },
+    {
+      ref: 12,
+      product: 'MaDecoTendance',
+      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png',
+      description : 'MaDecoTendance est un site de vente en ligne de décoration.',
+      price: 99.99,
+      montant : 1,
+      category : 'mobile',
+      categoryName : 'Mobile'
+    },
   ];
-
   // Fonction ajout du produit dans le panier
   function addItemOnCart(productName, force) {
     var itemOnList = false;
@@ -134,6 +240,7 @@ $(function() {
 
   // Fonction supprimer du tableau dans le panier
   function deleteOnCart(id) {
+    cart[id].montant = 1;
     delete cart[id];
   }
 
@@ -142,19 +249,29 @@ $(function() {
     $('#categoryList').append(`
       <a id="${categories[cats].id}" class="waves-effect waves-dark btn white dark-blue-text">${categories[cats].name}</a>
     `);
-    $('#'+categories[cats].id).click(createCategoriesButtons(cats));
+    $('#'+categories[cats].id).on('click', function() {
+      var classProduct = document.getElementsByClassName('trObject');
+      for(var i = 0; i < classProduct.length; i++) {
+        var objectClass = classProduct[i].attributes.class.nodeValue.split(' ');
+        if(objectClass[0] !== $(this)[0].id) {
+          $('.'+objectClass[0]).slideUp();
+        } else {
+          $('.'+objectClass[0]).slideDown();
+        }
+      }
+    });
   }
 
-  function createCategoriesButtons(id) {
-    console.log(id);
-    $('tr.productObjects').filter(document.getElementsByClassName(categories[id].id)).fadeOut();
-  }
+  // function createCategoriesButtons(id) {
+  //   console.log(id);
+  //   $('tr.productObjects').filter(document.getElementsByClassName(categories[id].id)).fadeOut();
+  // }
 
   // Génération des boutons ajouter au panier
   for(var prods = 0; prods < products.length; prods++) {
     prod = products[prods];
     $('#productList').append(`
-      <div class="col s12 m4" class="${prod.category}">
+      <div class="${prod.category} trObject col s12 m4">
       <div class="card">
       <div class="card-image">
       <img class="responsive-img-products" src="${prod.image}">
@@ -162,6 +279,7 @@ $(function() {
       <p class="center-align card-title truncate dark-blue-text rem13">${prod.product}</p>
       <div class="divider"></div>
       <div class="card-content">
+      <p><span class="badge blue white-text">${prod.categoryName}</span></p><br />
       <p>${prod.description}</p>
       </div>
       <div class="divider"></div>
@@ -171,7 +289,7 @@ $(function() {
       <p>${parseFloat(prod.price).toFixed(2)}€</p>
       </div>
       <div class="col s6">
-      <a class="btn addNewProductInCart right waves-effect waves-light dark-blue" data-item-name="${prod.product}"><i class="material-icons">shopping_cart</i> Ajouter au panier</a>
+      <a class="btn addNewProductInCart right waves-effect waves-light dark-blue tooltipped btn-floating" data-position="top" data-tooltip="Ajouter au panier" data-item-name="${prod.product}"><i class="material-icons">shopping_cart</i></a>
       </div>
       </div>
       </div>
@@ -184,6 +302,7 @@ $(function() {
       addItemOnCart(item, true);
       M.toast({html: 'Produit ajouté au panier!'})
     });
+    $('.tooltipped').tooltip();
     // End Mehdi's part2
 
     // Karl's part
