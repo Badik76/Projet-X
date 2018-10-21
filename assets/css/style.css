@@ -1,5 +1,6 @@
 body {
   font-family: "Lato", sans-serif;
+  scroll-behavior: smooth;
 }
 .dark-blue {
   background-color: #323c52;
@@ -22,12 +23,12 @@ i.icon-dark-blue {
 }
 /* Manouel's part  */
 header {
-  margin-bottom: 60px;
   z-index : 500;
 }
 .nav-wrapper.dark-blue {
   box-shadow:  2px 1px 5px 1px #0ce7fe;
   border-bottom: 1px solid black;
+  z-index:500;
 }
 
 .right.hide-on-med-and-down {
@@ -44,7 +45,6 @@ header {
   margin-left: 60px;
   text-shadow: 1px 0px 1px #0ce7fe;
 }
-
 header nav a {
   font-size: 18px;
   font-weight: bold;
@@ -66,7 +66,7 @@ header nav a {
 
 .carousel {
   box-shadow: 2px 1px 5px 1px black;
-  height: 450px;
+  height: 90vh;
 }
 .carousel img {
   z-index: 0;
@@ -177,7 +177,7 @@ h4 {
 
 .stars__control--small {
 	height: auto;
-	max-width: 80%;
+	max-width: 50%;
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -187,7 +187,7 @@ h4 {
 
 .stars__control--medium {
 	height: auto;
-	max-width: 80%;
+	max-width: 50%;
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -197,7 +197,7 @@ h4 {
 
 .stars__control--large {
 	height: auto;
-	max-width: 80%;
+	max-width: 50%;
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -251,7 +251,6 @@ h4 {
   position: fixed;
   right: 50px;
   bottom: 50px;
-  z-index:400000;
 }
 
 .mr-3 {
@@ -309,9 +308,51 @@ h4 {
   margin-right:auto;
 }
 
+#accountModalContent {
+  display: none;
+}
+
+#paymentMethodsModalContent {
+  display: none;
+}
+
+.rem10 {
+  font-size: 1rem;
+}
+
 .rem13 {
   font-size : 1.4rem;
 }
+
+.rem20 {
+  font-size : 2rem;
+}
+
+span.badge {
+  border-radius : 10px;
+}
+
+.btn:hover {
+  color:#fff;
+}
+
+a > i.fab {
+  transition: 0.3s;
+}
+
+a > i.fab:hover {
+  color:#fff;
+}
+
+input[type="text"]:not(.browser-default):disabled {
+  border-bottom: 1px dotted #91a0bc;
+}
+
+input[type="text"]:not(.browser-default):disabled + label {
+  color : #91a0bc;
+}
+
+
 /* End Mehdi's part  */
 
 /* Magalie's part  */
@@ -363,4 +404,6 @@ position:absolute;
 #mail:hover {
   color: white;
 }
+
+
 /* End Magalie's part  */
