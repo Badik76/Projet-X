@@ -32,6 +32,7 @@ $(function() {
       ref: 1,
       product: 'GeniusBazaar',
       image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png',
+      link : 'Lien du site',
       description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.',
       price: 500,
       montant : 1,
@@ -42,6 +43,7 @@ $(function() {
       ref: 2,
       product: 'MaBoutikBio',
       image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png',
+      link : 'Lien du site',
       description : 'MaBoutikBio est un site de vente en ligne de produits bio.',
       price:140,
       montant : 1,
@@ -51,6 +53,7 @@ $(function() {
     {
       ref: 3, product: 'MaDecoTendance',
       image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png',
+      link : 'Lien du site',
       description : 'MaDecoTendance est un site de vente en ligne de décoration.',
       price: 99.99,
       montant : 1,
@@ -61,6 +64,7 @@ $(function() {
       ref: 4,
       product: 'L\'atelier du coteau',
       image: 'https://cdn.discordapp.com/attachments/502377233143562252/502786311074349056/Capture_decran_de_2018-10-19_12-11-37.png',
+      link : 'Lien du site',
       description : 'L\'Atelier du coteau propose des ateliers de Danse, linguistiques et yoga pour tous.',
       price: 500,
       montant : 1,
@@ -71,6 +75,7 @@ $(function() {
       ref: 5,
       product: 'Jeff Bridges Sleeping Tapes',
       image: 'https://cdn.discordapp.com/attachments/502377233143562252/502786946343501825/Capture_decran_de_2018-10-19_12-14-02.png',
+      link : 'Lien du site',
       description : 'Jeff Bridges Sleeping Tapes est un compositeur qui propose ses sons en ligne.',
       price:140,
       montant : 1,
@@ -81,6 +86,7 @@ $(function() {
       ref: 6,
       product: 'Seattle Cider',
       image: 'https://cdn.discordapp.com/attachments/502377233143562252/502788421610242048/Capture_decran_de_2018-10-19_12-20-11.png',
+      link : 'Lien du site',
       description : 'Seattle Cider met en avant son cidre qui est vendu à Seattle.',
       price: 99.99,
       montant : 1,
@@ -91,6 +97,7 @@ $(function() {
       ref: 7,
       product: 'GeniusBazaar',
       image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png',
+      link : 'Lien du site',
       description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.',
       price: 500,
       montant : 1,
@@ -101,6 +108,7 @@ $(function() {
       ref: 8,
       product: 'MaBoutikBio',
       image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png',
+      link : 'Lien du site',
       description : 'MaBoutikBio est un site de vente en ligne de produits bio.',
       price:140,
       montant : 1,
@@ -111,6 +119,7 @@ $(function() {
       ref: 9,
       product: 'MaDecoTendance',
       image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png',
+      link : 'Lien du site',
       description : 'MaDecoTendance est un site de vente en ligne de décoration.',
       price: 99.99,
       montant : 1,
@@ -121,6 +130,7 @@ $(function() {
       ref: 10,
       product: 'GeniusBazaar',
       image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png',
+      link : 'Lien du site',
       description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.',
       price: 500,
       montant : 1,
@@ -131,6 +141,7 @@ $(function() {
       ref: 11,
       product: 'MaBoutikBio',
       image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png',
+      link : 'Lien du site',
       description : 'MaBoutikBio est un site de vente en ligne de produits bio.',
       price:140,
       montant : 1,
@@ -141,6 +152,7 @@ $(function() {
       ref: 12,
       product: 'MaDecoTendance',
       image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png',
+      link : 'Lien du site',
       description : 'MaDecoTendance est un site de vente en ligne de décoration.',
       price: 99.99,
       montant : 1,
@@ -148,6 +160,25 @@ $(function() {
       categoryName : 'Mobile'
     },
   ];
+
+  function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
   // Fonction ajout du produit dans le panier
   function addItemOnCart(productName, force) {
     var itemOnList = false;
@@ -277,17 +308,17 @@ $(function() {
 
   // Génération des boutons ajouter au panier
   for(var prods = 0; prods < products.length; prods++) {
-    prod = products[prods];
+    prod = shuffle(products)[prods];
     $('#productList').append(`
       <div class="${prod.category} trObject col s12 m4">
       <div class="card">
       <div class="card-image">
-      <img class="responsive-img-products" src="${prod.image}">
+      <a class="himg" target="_blank" href="${prod.link}"><img class="responsive-img-products" src="${prod.image}" /></a>
       </div>
       <p class="center-align card-title truncate dark-blue-text rem13">${prod.product}</p>
       <div class="divider"></div>
       <div class="card-content">
-      <p><span class="badge blue white-text">${prod.categoryName}</span></p><br />
+      <p><span class="badge blue white-text">${prod.categoryName}</span></p><br /><br />
       <p>${prod.description}</p>
       </div>
       <div class="divider"></div>
@@ -460,7 +491,7 @@ $(function() {
     var rwidth;
     for(var i = 0; i < starcountsmall; i++) {
       starglowsmallc++;
-      rheight = Math.floor(Math.random() * 5998) + 1;
+      rheight = Math.floor(Math.random() * ($(document).height() - 1)) + 1;
       rwidth = Math.floor(Math.random() * 90) + 1;
       if(starglowsmallc == 10)
       {
@@ -472,10 +503,9 @@ $(function() {
         $(".stars__control--small").append('<span class="star__small" style="top:'+ rheight +'px;left:' + rwidth +'vw;"></span>');
       }
     }
-
     for(var i = 0; i < starcountmedium; i++) {
       starglowmediumc++;
-      rheight = Math.floor(Math.random() * 5998) + 1;
+      rheight = Math.floor(Math.random() * ($(document).height() - 1)) + 1;
       rwidth = Math.floor(Math.random() * 90) + 1;
       if(starglowmediumc == 7)
       {
@@ -490,7 +520,7 @@ $(function() {
 
     for(var i = 0; i < starcountlarge; i++) {
       starglowlargec++;
-      rheight = Math.floor(Math.random() * 5998) + 1;
+      rheight = Math.floor(Math.random() * ($(document).height() - 1)) + 1;
       rwidth = Math.floor(Math.random() * 90) + 1;
       if(starglowlargec == 3)
       {
