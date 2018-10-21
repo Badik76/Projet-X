@@ -31,8 +31,8 @@ $(function() {
     {
       ref: 1,
       product: 'GeniusBazaar',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png',
-      link : 'Lien du site',
+      image: 'assets/img/genius.png',
+      link : 'https://geniusbazaar-shop.com/',
       description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.',
       price: 500,
       montant : 1,
@@ -42,8 +42,8 @@ $(function() {
     {
       ref: 2,
       product: 'MaBoutikBio',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png',
-      link : 'Lien du site',
+      image: 'assets/img/maboutik.png',
+      link : 'https://www.maboutikbio.com/',
       description : 'MaBoutikBio est un site de vente en ligne de produits bio.',
       price:140,
       montant : 1,
@@ -52,8 +52,8 @@ $(function() {
     },
     {
       ref: 3, product: 'MaDecoTendance',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png',
-      link : 'Lien du site',
+      image: 'assets/img/madeco.png',
+      link : 'http://madecotendance.com/',
       description : 'MaDecoTendance est un site de vente en ligne de décoration.',
       price: 99.99,
       montant : 1,
@@ -63,8 +63,8 @@ $(function() {
     {
       ref: 4,
       product: 'L\'atelier du coteau',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502786311074349056/Capture_decran_de_2018-10-19_12-11-37.png',
-      link : 'Lien du site',
+      image: 'assets/img/atelier.png',
+      link : 'https://www.latelierducoteau.com/',
       description : 'L\'Atelier du coteau propose des ateliers de Danse, linguistiques et yoga pour tous.',
       price: 500,
       montant : 1,
@@ -74,8 +74,8 @@ $(function() {
     {
       ref: 5,
       product: 'Jeff Bridges Sleeping Tapes',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502786946343501825/Capture_decran_de_2018-10-19_12-14-02.png',
-      link : 'Lien du site',
+      image: 'assets/img/jeff.png',
+      link : 'http://www.dreamingwithjeff.com/',
       description : 'Jeff Bridges Sleeping Tapes est un compositeur qui propose ses sons en ligne.',
       price:140,
       montant : 1,
@@ -85,8 +85,8 @@ $(function() {
     {
       ref: 6,
       product: 'Seattle Cider',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502788421610242048/Capture_decran_de_2018-10-19_12-20-11.png',
-      link : 'Lien du site',
+      image: 'assets/img/seattle.png',
+      link : 'https://www.seattlecidercompany.com/',
       description : 'Seattle Cider met en avant son cidre qui est vendu à Seattle.',
       price: 99.99,
       montant : 1,
@@ -95,10 +95,10 @@ $(function() {
     },
     {
       ref: 7,
-      product: 'GeniusBazaar',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png',
-      link : 'Lien du site',
-      description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.',
+      product: 'CMS forum',
+      image: 'assets/img/forum1.png',
+      link : 'https://www.phpbb.com/customise/db/style/ne_blackgreen/?sid=b00140a910d4a99ca75f4781a5f3a389',
+      description : 'système de gestion de contenus lié au forum à personnaliser',
       price: 500,
       montant : 1,
       category : 'forum',
@@ -106,10 +106,10 @@ $(function() {
     },
     {
       ref: 8,
-      product: 'MaBoutikBio',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png',
-      link : 'Lien du site',
-      description : 'MaBoutikBio est un site de vente en ligne de produits bio.',
+      product: 'CMS forum',
+      image: 'assets/img/forum2.png',
+      link : 'https://www.phpbb.com/customise/db/style/fth_tropic/?sid=b00140a910d4a99ca75f4781a5f3a389',
+      description : 'système de gestion de contenus lié au forum à personnaliser',
       price:140,
       montant : 1,
       category : 'forum',
@@ -117,10 +117,10 @@ $(function() {
     },
     {
       ref: 9,
-      product: 'MaDecoTendance',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png',
-      link : 'Lien du site',
-      description : 'MaDecoTendance est un site de vente en ligne de décoration.',
+      product: 'CMS forum',
+      image: 'assets/img/forum3.png',
+      link : 'https://www.phpbb.com/customise/db/style/we_universal/?sid=b00140a910d4a99ca75f4781a5f3a389',
+      description : 'système de gestion de contenus lié au forum à personnaliser',
       price: 99.99,
       montant : 1,
       category : 'forum',
@@ -128,10 +128,10 @@ $(function() {
     },
     {
       ref: 10,
-      product: 'GeniusBazaar',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png',
-      link : 'Lien du site',
-      description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.',
+      product: 'Netflix',
+      image: 'assets/img/netflix.png',
+      link : 'https://www.netflix.com/app',
+      description : 'leader mondial de service d\'abonnement permettant la diffusion de films et séries TV',
       price: 500,
       montant : 1,
       category : 'mobile',
@@ -161,24 +161,6 @@ $(function() {
     },
   ];
 
-  function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-}
   // Fonction ajout du produit dans le panier
   function addItemOnCart(productName, force) {
     var itemOnList = false;
@@ -308,7 +290,7 @@ $(function() {
 
   // Génération des boutons ajouter au panier
   for(var prods = 0; prods < products.length; prods++) {
-    prod = shuffle(products)[prods];
+    prod = products[prods];
     $('#productList').append(`
       <div class="${prod.category} trObject col s12 m4">
       <div class="card">
@@ -548,31 +530,31 @@ $(function() {
 
     // Magalie's part
     $("#img1").mouseover(function() {
-      img1.src = "assets/img/avatar2.jpg";
+      img1.src = "assets/img/karl2.jpg";
     })
     $("#img1").mouseout(function() {
-      img1.src = "assets/img/avatar.jpg";
+      img1.src = "assets/img/karl1.jpg";
     })
 
     $("#img2").mouseover(function() {
-      img2.src = "assets/img/avatar2.jpg";
+      img2.src = "assets/img/medhi2.jpg";
     })
     $("#img2").mouseout(function() {
-      img2.src = "assets/img/avatar.jpg";
+      img2.src = "assets/img/medhi1.jpg";
     })
 
     $("#img3").mouseover(function() {
-      img3.src = "assets/img/avatar2.jpg";
+      img3.src = "assets/img/manu2.jpg";
     })
     $("#img3").mouseout(function() {
-      img3.src = "assets/img/avatar.jpg";
+      img3.src = "assets/img/manu1.jpg";
     })
 
     $("#img4").mouseover(function() {
-      img4.src = "assets/img/avatar2.jpg";
+      img4.src = "assets/img/krevette2.jpg";
     })
     $("#img4").mouseout(function() {
-      img4.src = "assets/img/avatar.jpg";
+      img4.src = "assets/img/krevette1.jpg";
     })
     // End Magalie's part
   });
