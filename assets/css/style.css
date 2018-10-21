@@ -251,6 +251,7 @@ h4 {
   position: fixed;
   right: 50px;
   bottom: 50px;
+  z-index: 5000000;
 }
 
 .mr-3 {
@@ -352,6 +353,13 @@ input[type="text"]:not(.browser-default):disabled + label {
   color : #91a0bc;
 }
 
+input[type="email"]:not(.browser-default):disabled {
+  border-bottom: 1px dotted #91a0bc;
+}
+
+input[type="email"]:not(.browser-default):disabled + label {
+  color : #91a0bc;
+}
 
 /* End Mehdi's part  */
 
@@ -377,11 +385,6 @@ i {
   color: #0ce7fe;
 }
 
-#contact {
-  margin-top: 100px;
-
-}
-
 #phone {
   line-height: 50px;
 }
@@ -390,7 +393,7 @@ i {
 overflow:hidden;
 padding-bottom:56.25%;
 position:relative;
-height:0;
+height:300px;
 }
 
 .map-responsive iframe {

@@ -161,24 +161,6 @@ $(function() {
     },
   ];
 
-  function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-}
   // Fonction ajout du produit dans le panier
   function addItemOnCart(productName, force) {
     var itemOnList = false;
@@ -308,7 +290,7 @@ $(function() {
 
   // Génération des boutons ajouter au panier
   for(var prods = 0; prods < products.length; prods++) {
-    prod = shuffle(products)[prods];
+    prod = products[prods];
     $('#productList').append(`
       <div class="${prod.category} trObject col s12 m4">
       <div class="card">
@@ -413,6 +395,16 @@ $(function() {
               session.email = $email;
               session.password = $password;
               session.phoneNumber = $phoneNumber;
+
+              $('#contactLastName').attr('disabled', true);
+              $('#labelContactLastName').text(session.lastName);
+              $('#contactFirstName').attr('disabled', true);
+              $('#labelContactFirstName').text(session.firstName);
+              $('#contactEmail').attr('disabled', true);
+              $('#labelContactEmail').text(session.email);
+              $('#contactPhoneNumber').attr('disabled', true);
+              $('#labelContactPhoneNumber').text(session.phoneNumber);
+              $('#contactPasswordField').attr('hidden', false);
               swal('Youpi!', 'Bienvenue sur AWP '+parseChar(session.firstName)+' '+parseChar(session.lastName)+'! Création du compte réussi!', 'success');
               $('#accountModalContent').slideUp();
               $('#paymentMethodsModalContent').slideDown();
@@ -420,10 +412,10 @@ $(function() {
               swal('Oops!', 'Erreur interne...', 'error');
             }
           } else {
-            swal('Oops!', 'Les 2 mots de passes ne correspondent pas!')
+            swal('Oops!', 'Les 2 mots de passes ne correspondent pas!', 'error')
           }
         } else {
-          swal('Oops!', 'Il est nécessaire d\'avoir un mot de passe supérieur à 6 caractères!')
+          swal('Oops!', 'Il est nécessaire d\'avoir un mot de passe supérieur à 6 caractères!', 'error')
         }
       } else {
         swal('Oops!', 'Merci de bien vouloir remplir correctement tous les champs!', 'error');
@@ -463,15 +455,46 @@ $(function() {
               essais++;
             }
           } else {
-            swal('Oops!', 'Le type de carte est invalide!');
+            swal('Oops!', 'Le type de carte est invalide!', 'error');
           }
         } else {
-          swal('La date d\'expiration n\'est pas valide!');
+          swal('La date d\'expiration n\'est pas valide!', 'error');
         }
       } else {
         swal('Oops!', 'La carte bancaire entrée est invalide!', 'error');
       }
     });
+
+    $('#contactSubmit').on('click', function() {
+      var $content = $('#contactContent').val();
+      var regexContent = /^[A-Za-zÂ-ÿ0-9-_./=()""]+$/;
+      if(accountCreated) {
+        var $password = $('#contactPassword').val();
+        if($password === session.password) {
+          if(regexContent.test($content)) {
+            swal('Euh...', 'Le message ne peut pas être envoyé, désolé mais notre contrainte s\'élève jusqu\'au PHP!', 'warning');
+          } else {
+            swal('Oops!', 'Merci d\'utiliser uniquement des caractères autorisés dans le descriptif!', 'error');
+          }
+        } else {
+          swal('Oops!', 'Le mot de passe ne correspond pas à celui de votre compte!', 'error');
+        }
+      } else {
+        var $lastName = $('#contactLastName').val();
+        var $firstName = $('#contactFirstName').val();
+        var $email = $('#contactEmail').val();
+        var $phoneNumber = $('#contactPhoneNumber').val();
+        var regexBase = /^[A-Za-zÂ-ÿ-]+$/;
+        var regexMail = /^[A-Za-z0-9-_.]+[@][A-Za-z0-9-_.]+[.][A-Za-z]+$/;
+        var regexPhoneNumber = /^[\d]+$/
+        if(regexBase.test($lastName) && regexBase.test($firstName) && regexMail.test($email) && regexPhoneNumber.test($phoneNumber)) {
+          swal('Euh...', 'Le message ne peut pas être envoyé, désolé mais notre contrainte s\'élève jusqu\'au PHP!', 'warning');
+        } else {
+          swal('Oops!', 'Merci de revoir vos champs.', 'error');
+        }
+      }
+    });
+
     // End Mehdi's part2
 
     // Karl's part
@@ -491,7 +514,7 @@ $(function() {
     var rwidth;
     for(var i = 0; i < starcountsmall; i++) {
       starglowsmallc++;
-      rheight = Math.floor(Math.random() * ($(document).height() - 1)) + 1;
+      rheight = Math.floor(Math.random() * ($(document).height() - 200)) + 1;
       rwidth = Math.floor(Math.random() * 90) + 1;
       if(starglowsmallc == 10)
       {
@@ -505,7 +528,7 @@ $(function() {
     }
     for(var i = 0; i < starcountmedium; i++) {
       starglowmediumc++;
-      rheight = Math.floor(Math.random() * ($(document).height() - 1)) + 1;
+      rheight = Math.floor(Math.random() * ($(document).height() - 200)) + 1;
       rwidth = Math.floor(Math.random() * 90) + 1;
       if(starglowmediumc == 7)
       {
@@ -520,7 +543,7 @@ $(function() {
 
     for(var i = 0; i < starcountlarge; i++) {
       starglowlargec++;
-      rheight = Math.floor(Math.random() * ($(document).height() - 1)) + 1;
+      rheight = Math.floor(Math.random() * ($(document).height() - 200)) + 1;
       rwidth = Math.floor(Math.random() * 90) + 1;
       if(starglowlargec == 3)
       {

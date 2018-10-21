@@ -371,31 +371,37 @@
           <div class="col s12 m4">
             <h5 class="white-text">Formulaire de contact</h5>
             <div class="divider"></div>
-            <form>
-              <div class="input-field">
-                <input id="contactLastName" type="text" class="validate soft-white">
-                <label for="contactLastName">Nom</label>
-              </div>
-              <div class="input-field">
-                <input id="contactFirstName" type="text" class="validate soft-white">
-                <label for="contactFirstName">Prénom</label>
-              </div>
-              <div class="input-field">
-                <input id="contactMail" type="email" class="validate soft-white">
-                <label for="contactMail">Email</label>
-              </div>
-              <div class="input-field">
-                <textarea id="contactContent" class="materialize-textarea soft-white"></textarea>
-                <label for="contactContent">Descriptif de votre demande</label>
-              </div>
-              <button class="btn waves-effect dark-blue z-depth-2 right soft-blue-text left col s12" type="submit" name="action">Envoyer<i class="material-icons right">send</i></button>
-            </form>
+            <div class="input-field">
+              <input id="contactLastName" type="text" class="validate soft-white">
+              <label id="labelContactLastName" for="contactLastName">Nom</label>
+            </div>
+            <div class="input-field">
+              <input id="contactFirstName" type="text" class="validate soft-white">
+              <label id="labelContactFirstName" for="contactFirstName">Prénom</label>
+            </div>
+            <div class="input-field">
+              <input id="contactEmail" type="email" class="validate soft-white">
+              <label id="labelContactEmail" for="contactEmail">Email</label>
+            </div>
+            <div class="input-field">
+              <input id="contactPhoneNumber" type="text" class="validate soft-white">
+              <label id="labelContactPhoneNumber" for="contactPhoneNumber">Numéro de téléphone</label>
+            </div>
+            <div id="contactPasswordField" class="input-field" hidden>
+              <input id="contactPassword" type="password" class="validate soft-white">
+              <label for="contactPassword">Mot de passe</label>
+            </div>
+            <div class="input-field">
+              <textarea id="contactContent" class="materialize-textarea soft-white"></textarea>
+              <label for="contactContent">Descriptif de votre demande</label>
+            </div>
+            <button id="contactSubmit" class="btn waves-effect dark-blue z-depth-2 right soft-blue-text left col s12" type="submit" name="action">Envoyer<i class="material-icons right">send</i></button>
           </div>
           <div class="col s12 m4">
             <h5 class="white-text">Nous retrouver</h5>
             <div class="divider"></div>
             <p id="address" class="soft-blue-text center-align"><i class="fas fa-map-marker-alt"></i><strong>AliveWebProject - The Web Community</strong><br />2 rue Dombasle<br />76600 Le Havre</p>
-            <div class="map-responsive z-depth-5"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2592.026136893306!2d0.1314733508011465!3d49.484013279252395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e02e55af007f11%3A0xcb679803210d6c5c!2s2+Rue+de+Dombasle%2C+76600+Le+Havre!5e0!3m2!1sen!2sfr!4v1539865728537" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+            <div class="map-responsive z-depth-5"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2592.026136893306!2d0.1314733508011465!3d49.484013279252395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e02e55af007f11%3A0xcb679803210d6c5c!2s2+Rue+de+Dombasle%2C+76600+Le+Havre!5e0!3m2!1sen!2sfr!4v1539865728537" width="600" height="700" frameborder="0" style="border:0" allowfullscreen></iframe></div>
           </div>
           <div class="col s12 m4">
             <h5 class="white-text">Nous joindre</h5>
