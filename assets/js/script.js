@@ -568,7 +568,7 @@ $(function() {
 
     // End of Manouel's
 
-
+$labelMehdi = $('#labelMehdi').html()
     // Magalie's part
     $("#img1").mouseover(function() {
       img1.src = "assets/img/avatar2.jpg";
@@ -579,9 +579,12 @@ $(function() {
 
     $("#img2").mouseover(function() {
       img2.src = "assets/img/avatar2.jpg";
+      $('#labelMehdi').html('Test')
     })
     $("#img2").mouseout(function() {
       img2.src = "assets/img/avatar.jpg";
+      console.log($('#labelMehdi').html());
+      $('#labelMehdi').html($labelMehdi)
     })
 
     $("#img3").mouseover(function() {
