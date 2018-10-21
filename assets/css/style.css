@@ -21,6 +21,44 @@ body {
 i.icon-dark-blue {
   color: #374664;
 }
+
+.center h4.soft-white {
+  margin-bottom: 80px;
+  padding-top: 60px;
+}
+
+.center p.soft-white {
+  margin-bottom: 90px;
+}
+
+.center h4.soft-white.top {
+  margin-bottom: 40px;
+  padding-top: 60px;
+}
+
+.center p.soft-white.top {
+  margin-bottom: 40px;
+}
+
+.center h4.soft-white.middle {
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.center h4.soft-white.cat {
+  margin-bottom: 60px;
+  padding-top: 60px;
+}
+
+.soft-white.pics.center-align {
+  margin-bottom: 80px;
+  padding-top: 60px;
+}
+
+
+.cardm.soft-blue-text {
+  margin-bottom: 100px;
+}
 /* Manouel's part  */
 header {
   z-index : 500;
@@ -374,6 +412,7 @@ margin-top: 50px;
 }
 
 .cardm {
+  position:relative;
   background-color: #2a3244;
 }
 
@@ -384,6 +423,9 @@ i {
   margin-right: 10px;
 }
 
+.page-footer {
+  padding-top:0;
+}
 
 .input-field > label {
   color: #0ce7fe;

@@ -20,146 +20,180 @@ $(function() {
 
   // Liste des catégories
   var categories = [
-    {name : 'E-Commerce', id : 'eshop'},
     {name : 'Sites Vitrines', id : 'showcase'},
+    {name : 'E-Commerce', id : 'eshop'},
     {name : 'Forums', id : 'forum'},
-    {name : 'Applications Mobile', id : 'mobile'}
+    {name : 'Frameworks', id : 'framework'},
+    {name : 'Applications Mobile', id : 'mobile'},
   ];
 
   // Liste des produits ( Si on en ajoute, l'HTML sera bien sûr aussi bien généré automatiquement <3)
   var products = [
-    {
-      ref: 1,
-      product: 'GeniusBazaar',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png',
-      link : 'Lien du site',
-      description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.',
-      price: 500,
-      montant : 1,
-      category : 'eshop',
-      categoryName : 'E-Commerce'
-    },
-    {
-      ref: 2,
-      product: 'MaBoutikBio',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png',
-      link : 'Lien du site',
-      description : 'MaBoutikBio est un site de vente en ligne de produits bio.',
-      price:140,
-      montant : 1,
-      category : 'eshop',
-      categoryName : 'E-Commerce'
-    },
-    {
-      ref: 3, product: 'MaDecoTendance',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png',
-      link : 'Lien du site',
-      description : 'MaDecoTendance est un site de vente en ligne de décoration.',
-      price: 99.99,
-      montant : 1,
-      category : 'eshop',
-      categoryName : 'E-Commerce'
-    },
-    {
-      ref: 4,
-      product: 'L\'atelier du coteau',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502786311074349056/Capture_decran_de_2018-10-19_12-11-37.png',
-      link : 'Lien du site',
-      description : 'L\'Atelier du coteau propose des ateliers de Danse, linguistiques et yoga pour tous.',
-      price: 500,
-      montant : 1,
-      category : 'showcase',
-      categoryName : 'Site Vitrine'
-    },
-    {
-      ref: 5,
-      product: 'Jeff Bridges Sleeping Tapes',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502786946343501825/Capture_decran_de_2018-10-19_12-14-02.png',
-      link : 'Lien du site',
-      description : 'Jeff Bridges Sleeping Tapes est un compositeur qui propose ses sons en ligne.',
-      price:140,
-      montant : 1,
-      category : 'showcase',
-      categoryName : 'Site Vitrine'
-    },
-    {
-      ref: 6,
-      product: 'Seattle Cider',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502788421610242048/Capture_decran_de_2018-10-19_12-20-11.png',
-      link : 'Lien du site',
-      description : 'Seattle Cider met en avant son cidre qui est vendu à Seattle.',
-      price: 99.99,
-      montant : 1,
-      category : 'showcase',
-      categoryName : 'Site Vitrine'
-    },
-    {
-      ref: 7,
-      product: 'GeniusBazaar',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png',
-      link : 'Lien du site',
-      description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.',
-      price: 500,
-      montant : 1,
-      category : 'forum',
-      categoryName : 'Forum'
-    },
-    {
-      ref: 8,
-      product: 'MaBoutikBio',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png',
-      link : 'Lien du site',
-      description : 'MaBoutikBio est un site de vente en ligne de produits bio.',
-      price:140,
-      montant : 1,
-      category : 'forum',
-      categoryName : 'Forum'
-    },
-    {
-      ref: 9,
-      product: 'MaDecoTendance',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png',
-      link : 'Lien du site',
-      description : 'MaDecoTendance est un site de vente en ligne de décoration.',
-      price: 99.99,
-      montant : 1,
-      category : 'forum',
-      categoryName : 'Forum'
-    },
-    {
-      ref: 10,
-      product: 'GeniusBazaar',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782564956766209/Capture_decran_de_2018-10-19_11-55-18.png',
-      link : 'Lien du site',
-      description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.',
-      price: 500,
-      montant : 1,
-      category : 'mobile',
-      categoryName : 'Mobile'
-    },
-    {
-      ref: 11,
-      product: 'MaBoutikBio',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502782851620667393/Capture_decran_de_2018-10-19_11-50-11.png',
-      link : 'Lien du site',
-      description : 'MaBoutikBio est un site de vente en ligne de produits bio.',
-      price:140,
-      montant : 1,
-      category : 'mobile',
-      categoryName : 'Mobile'
-    },
-    {
-      ref: 12,
-      product: 'MaDecoTendance',
-      image: 'https://cdn.discordapp.com/attachments/502377233143562252/502783602631770123/Capture_decran_de_2018-10-19_12-00-09.png',
-      link : 'Lien du site',
-      description : 'MaDecoTendance est un site de vente en ligne de décoration.',
-      price: 99.99,
-      montant : 1,
-      category : 'mobile',
-      categoryName : 'Mobile'
-    },
-  ];
+   {
+     ref: 1,
+     product: 'GeniusBazaar',
+     image: 'assets/img/genius.png',
+     link : 'https://geniusbazaar-shop.com/',
+     description : 'GeniusBazaar est un site de vente en ligne d\'accessoires.',
+     price: 500,
+     montant : 1,
+     category : 'eshop',
+     categoryName : 'E-Commerce'
+   },
+   {
+     ref: 2,
+     product: 'MaBoutikBio',
+     image: 'assets/img/maboutik.png',
+     link : 'https://www.maboutikbio.com/',
+     description : 'MaBoutikBio est un site de vente en ligne de produits bio.',
+     price:140,
+     montant : 1,
+     category : 'eshop',
+     categoryName : 'E-Commerce'
+   },
+   {
+     ref: 3, product: 'MaDecoTendance',
+     image: 'assets/img/madeco.png',
+     link : 'http://madecotendance.com/',
+     description : 'MaDecoTendance est un site de vente en ligne de décoration.',
+     price: 99.99,
+     montant : 1,
+     category : 'eshop',
+     categoryName : 'E-Commerce'
+   },
+   {
+     ref: 4,
+     product: 'L\'atelier du coteau',
+     image: 'assets/img/atelier.png',
+     link : 'https://www.latelierducoteau.com/',
+     description : 'L\'Atelier du coteau propose des ateliers de Danse, linguistiques et yoga pour tous.',
+     price: 500,
+     montant : 1,
+     category : 'showcase',
+     categoryName : 'Site Vitrine'
+   },
+   {
+     ref: 5,
+     product: 'Jeff Bridges Sleeping Tapes',
+     image: 'assets/img/jeff.png',
+     link : 'http://www.dreamingwithjeff.com/',
+     description : 'Jeff Bridges Sleeping Tapes est un compositeur qui propose ses sons en ligne.',
+     price:140,
+     montant : 1,
+     category : 'showcase',
+     categoryName : 'Site Vitrine'
+   },
+   {
+     ref: 6,
+     product: 'Seattle Cider',
+     image: 'assets/img/seattle.png',
+     link : 'https://www.seattlecidercompany.com/',
+     description : 'Seattle Cider met en avant son cidre qui est vendu à Seattle.',
+     price: 99.99,
+     montant : 1,
+     category : 'showcase',
+     categoryName : 'Site Vitrine'
+   },
+   {
+     ref: 7,
+     product: 'CMS forum',
+     image: 'assets/img/forum1.png',
+     link : 'https://www.phpbb.com/customise/db/style/ne_blackgreen/?sid=b00140a910d4a99ca75f4781a5f3a389',
+     description : 'système de gestion de contenus lié au forum à personnaliser',
+     price: 376.45,
+     montant : 1,
+     category : 'forum',
+     categoryName : 'Forum'
+   },
+   {
+     ref: 8,
+     product: 'CMS forum',
+     image: 'assets/img/forum2.png',
+     link : 'https://www.phpbb.com/customise/db/style/fth_tropic/?sid=b00140a910d4a99ca75f4781a5f3a389',
+     description : 'système de gestion de contenus lié au forum à personnaliser',
+     price:140,
+     montant : 1,
+     category : 'forum',
+     categoryName : 'Forum'
+   },
+   {
+     ref: 9,
+     product: 'CMS forum',
+     image: 'assets/img/forum3.png',
+     link : 'https://www.phpbb.com/customise/db/style/we_universal/?sid=b00140a910d4a99ca75f4781a5f3a389',
+     description : 'système de gestion de contenus lié au forum à personnaliser',
+     price: 99.99,
+     montant : 1,
+     category : 'forum',
+     categoryName : 'Forum'
+   },
+   {
+     ref: 10,
+     product: 'Netflix',
+     image: 'assets/img/netflix.png',
+     link : 'https://www.netflix.com/app',
+     description : 'leader mondial de service d\'abonnement permettant la diffusion de films et séries TV',
+     price: 500,
+     montant : 1,
+     category : 'mobile',
+     categoryName : 'Mobile'
+   },
+   {
+     ref: 11,
+     product: 'Blablacar',
+     image: './assets/img/blablacar.png',
+     link : 'https://www.blablacar.fr/apps-mobile',
+     description : 'Marre des trains ? Pensez covoiturage, pensez "Blablacar", sympathie et voyage assurée.',
+     price:140,
+     montant : 1,
+     category : 'mobile',
+     categoryName : 'Mobile'
+   },
+   {
+     ref: 12,
+     product: 'Discord',
+     image: './assets/img/discord.png',
+     link : 'https://discordapp.com/',
+     description : 'Chat vocal et texte tout-en-un gratuits ,sécurisés et qui fonctionnent sur PC et smartphone.',
+     price: 99.99,
+     montant : 1,
+     category : 'mobile',
+     categoryName : 'Mobile'
+   },
+   {
+     ref: 13,
+     product: 'Symfony',
+     image: './assets/img/symfony.png',
+     link : 'https://symfony.com/',
+     description : 'Symfony <br/> framework php qui facilite la vie.',
+     price: 49.99,
+     montant : 1,
+     category : 'framework',
+     categoryName : 'Frameworks'
+   },
+   {
+     ref: 14,
+     product: 'Bootstrap',
+     image: './assets/img/bootstrap.png',
+     link : 'https://screenshots.firefox.com/Qms4PtWitbgMNrgY/getbootstrap.com',
+     description : 'Bootstrap <br/> simplifie le responsive et le css.',
+     price: 49.99,
+     montant : 1,
+     category : 'framework',
+     categoryName : 'Frameworks'
+   },
+   {
+     ref: 15,
+     product: 'Django',
+     image: './assets/img/django.png',
+     link : 'https://www.djangoproject.com/',
+     description : 'Django construction de page web <br/> simplifié avec encore moins de code.',
+     price: 49.99,
+     montant : 1,
+     category : 'framework',
+     categoryName : 'Frameworks'
+   },
+ ];
 
   // Fonction ajout du produit dans le panier
   function addItemOnCart(productName, force) {
@@ -500,21 +534,25 @@ $(function() {
     // Karl's part
     $('.parallax').parallax(); //activation du parallax
 
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max + 1));
+    }
+
     // création d'un background animé
     var starcountsmall = 100;
     var starglowsmallc = 0;
 
-    var starcountmedium = 50;
+    var starcountmedium = 250;
     var starglowmediumc = 0;
 
-    var starcountlarge = 20;
+    var starcountlarge = 100;
     var starglowlargec = 0;
 
     var rheight;
     var rwidth;
     for(var i = 0; i < starcountsmall; i++) {
       starglowsmallc++;
-      rheight = Math.floor(Math.random() * ($(document).height() - 200)) + 1;
+      rheight = getRandomInt($(document).height());
       rwidth = Math.floor(Math.random() * 90) + 1;
       if(starglowsmallc == 10)
       {
@@ -528,7 +566,7 @@ $(function() {
     }
     for(var i = 0; i < starcountmedium; i++) {
       starglowmediumc++;
-      rheight = Math.floor(Math.random() * ($(document).height() - 200)) + 1;
+      rheight = getRandomInt($(document).height());
       rwidth = Math.floor(Math.random() * 90) + 1;
       if(starglowmediumc == 7)
       {
@@ -543,7 +581,7 @@ $(function() {
 
     for(var i = 0; i < starcountlarge; i++) {
       starglowlargec++;
-      rheight = Math.floor(Math.random() * ($(document).height() - 200)) + 1;
+      rheight = getRandomInt($(document).height());
       rwidth = Math.floor(Math.random() * 90) + 1;
       if(starglowlargec == 3)
       {
@@ -571,34 +609,31 @@ $(function() {
 $labelMehdi = $('#labelMehdi').html()
     // Magalie's part
     $("#img1").mouseover(function() {
-      img1.src = "assets/img/avatar2.jpg";
-    })
-    $("#img1").mouseout(function() {
-      img1.src = "assets/img/avatar.jpg";
-    })
+        img1.src = "assets/img/karl2.jpg";
+      })
+      $("#img1").mouseout(function() {
+        img1.src = "assets/img/karl1.jpg";
+      })
 
-    $("#img2").mouseover(function() {
-      img2.src = "assets/img/avatar2.jpg";
-      $('#labelMehdi').html('Test')
-    })
-    $("#img2").mouseout(function() {
-      img2.src = "assets/img/avatar.jpg";
-      console.log($('#labelMehdi').html());
-      $('#labelMehdi').html($labelMehdi)
-    })
+      $("#img2").mouseover(function() {
+        img2.src = "assets/img/medhi2.jpg";
+      })
+      $("#img2").mouseout(function() {
+        img2.src = "assets/img/medhi1.jpg";
+      })
 
-    $("#img3").mouseover(function() {
-      img3.src = "assets/img/avatar2.jpg";
-    })
-    $("#img3").mouseout(function() {
-      img3.src = "assets/img/avatar.jpg";
-    })
+      $("#img3").mouseover(function() {
+        img3.src = "assets/img/manu2.jpg";
+      })
+      $("#img3").mouseout(function() {
+        img3.src = "assets/img/manu1.jpg";
+      })
 
-    $("#img4").mouseover(function() {
-      img4.src = "assets/img/avatar2.jpg";
-    })
-    $("#img4").mouseout(function() {
-      img4.src = "assets/img/avatar.jpg";
-    })
+      $("#img4").mouseover(function() {
+        img4.src = "assets/img/krevette2.jpg";
+      })
+      $("#img4").mouseout(function() {
+        img4.src = "assets/img/krevette1.jpg";
+      })
     // End Magalie's part
   });
