@@ -497,6 +497,8 @@ for(var cats = 0; cats < categories.length; cats++) {
                 var totalPrice = getTotalCartPrice();
                 $('#totalCartPrice').text('Le total est de : ' + totalPrice + '€');
                 swal('Youpi!', 'Paiement accepté!', 'success');
+                var totalPrice = getTotalCartPrice();
+                $('#totalOnCart').text('Le total est de : ' + parseFloat(totalPrice).toFixed(2) + '€');
                 $('#paymentMethodsModalContent').slideUp();
                 $('#cartModalContent').slideDown();
               } else {
