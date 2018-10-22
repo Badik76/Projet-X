@@ -141,7 +141,7 @@
   <!-- End Mehdi's part2 -->
   <!-- Manouel's part -->
   <header>
-    <nav>
+    <nav id="navbar">
       <div class="nav-wrapper dark-blue">
         <i class="fas fa-cloud"></i>
         <a href="#!" class="brand-logo">AWP</a>
@@ -153,45 +153,54 @@
           <li><a href="#team">NOTRE EQUIPE</a></li>
           <li><a href="#contact">CONTACT</a></li>
         </ul>
-
-        <ul id="slide-out" class="sidenav">
-          <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-          <li><a href="#!">Second Link</a></li>
-          <li><div class="divider"></div></li>
-          <li><a class="subheader">Subheader</a></li>
-          <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        <ul class="right hide-on-med-and-up center-align">
+          <li><a data-target="slide-out" class="right sidenav-trigger"><i class="material-icons">menu</i></a></li>
         </ul>
       </div>
     </nav>
+    <ul id="slide-out" class="sidenav">
+      <li><a href="#advantages"><i class="fas fa-search-plus"></i> NOS ATOUTS</a></li>
+      <li><a href="#offers"><i class="fas fa-code"></i> NOS OFFRES</a></li>
+      <li><a href="#creations"><i class="fas fa-folder-plus"></i> NOS CREATIONS</a></li>
+      <li><a href="#products"><i class="fas fa-book-open"></i> NOTRE CATALOGUE</a></li>
+      <li><a href="#team"><i class="fas fa-users"></i> NOTRE EQUIPE</a></li>
+      <li><a href="#contact"><i class="fas fa-address-card"></i> CONTACT</a></li>
+    </ul>
   </header>
 
   <section class="carousel-top">
     <div class="carousel carousel-slider center">
       <ul>
-        <li class="carousel-item">
-          <div class="carousel-fixed-item center">
-            <h2>Votre plus grand allié<br/>vers la transition dans le numérique</h2>
-            <p>Notre équipe de warriors se plie en quatre pour satisfaire toutes vos demandes.<br/>Nous donnerons toujours tout pour vous.</p>
-            <a class="btn waves-effect white black-text darken-text-2" href="#offers">Decouvrir nos offres</a>
-          </div>
-          <img src="assets/img/sky.jpg" alt="ciel" title="ciel" id="slide1"/>
-        </li>
-        <li class="carousel-item">
-          <div class="carousel-fixed-item center">
-            <h2>Nous utilisons les dernières<br/>technologies à notre disposition</h2>
-            <p>L'ensemble des collaborateurs est régulièment formé et effectue une veille constante.</p>
-            <a class="btn waves-effect white black-text darken-text-2" href="#creations">Decouvrir nos réalisations</a>
-          </div>
-          <img src="assets/img/thunder.jpg" alt="éclair" title="éclair" id="slide2"/>
-        </li>
-        <li class="carousel-item">
-          <div class="carousel-fixed-item center">
-            <h2>Rendez-nous visite !</h2>
-            <p>Nos cookies sont excellents, <br/>mais nous ne pouvons pas en dire autant pour notre café.</p>
-            <a class="btn waves-effect white black-text darken-text-2" href="#contact">Venez nous rendre visite !</a>
-          </div>
-          <img src="assets/img/milky-way.jpg" alt="voie lactée" title="voie lactée" id="slide3"/>
-        </li>
+        <div class="carousel-item" href="#one!">
+          <li>
+            <div class="carousel-fixed-item center">
+              <h2>Votre plus grand allié<br/>vers la transition dans le numérique</h2>
+              <p>Notre équipe de warriors se plie en quatre pour satisfaire toutes vos demandes.<br/>Nous donnerons toujours tout pour vous.</p>
+              <a class="btn waves-effect white black-text darken-text-2">Decouvrir nos offres</a>
+            </div>
+            <img src="assets/img/sky.jpg" alt="ciel" title="ciel" id="slide1"/>
+          </li>
+        </div>
+        <div class="carousel-item" href="#two!">
+          <li>
+            <div class="carousel-fixed-item center">
+              <h2>Nous utilisons les dernières<br/>technologies à notre disposition</h2>
+              <p>L'ensemble des collaborateurs est régulièment formé et effectuent une veille constante.</p>
+              <a class="btn waves-effect white black-text darken-text-2">Decouvrir nos réalisations</a>
+            </div>
+            <img src="assets/img/thunder.jpg" alt="éclair" title="éclair" id="slide2"/>
+          </li>
+        </div>
+        <div class="carousel-item" href="#three!">
+          <li>
+            <div class="carousel-fixed-item center">
+              <h2>Rendez-nous visite !</h2>
+              <p>Nos cookies sont exellents, <br/>mais nous ne pouvons pas en dire autant pour notre café.</p>
+              <a class="btn waves-effect white black-text darken-text-2">Venez nous rendre visite !</a>
+            </div>
+            <img src="assets/img/milky-way.jpg" alt="voie lactée" title="voie lactée" id="slide3"/>
+          </li>
+        </div>
       </ul>
 
     </div>
@@ -217,7 +226,7 @@
           <h5 class="soft-blue-text">Collaboration</h5>
           <p class="soft-white">Nous facturons avec transparence<br/>et livrons vos projets en un temps record</p>
         </div>
-        <div class="col s12 m6 l4">
+        <div class="col s12 l4">
           <i class="large material-icons hicon soft-blue-text">phonelink_ring</i>
           <h5 class="soft-blue-text">Responsivité</h5>
           <p class="soft-white">Notre équipe réalise des projets légers,<br/>SEO & responsive friendly</p>
@@ -253,7 +262,7 @@
         <div class="col s12 m6 l4">
           <i class="large material-icons hicon soft-blue-text">settings</i>
           <h5 class="soft-blue-text">Maintenance de nos sites</h5>
-          <p class="soft-white top">Service après-vente,<br /> maintenance informatique d'un an sur tout nos produits</p>
+          <p class="soft-white top">Service après-vente,<br /> maintenance informatique d'un an sur tous nos produits</p>
         </div>
       </div>
       <div class="parallax-container">

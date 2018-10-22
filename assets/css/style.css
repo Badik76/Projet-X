@@ -416,6 +416,15 @@ margin-top: 50px;
   background-color: #2a3244;
 }
 
+header > nav {
+  position:fixed;
+  top:0;
+  z-index:3000;
+}
+
+.carousel-top {
+  margin-top:64px;
+}
 
 /* FOOTER */
 i {
@@ -433,6 +442,10 @@ i {
 
 #phone {
   line-height: 50px;
+}
+
+#slide-out {
+  z-index:9999999999999;
 }
 
 .map-responsive {
