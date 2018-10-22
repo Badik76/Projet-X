@@ -626,11 +626,17 @@ $(function() {
 
       $labelMehdi = $('#labelMehdi').html()
       // Magalie's part
+      var $labelKarl = $('#labelKarl');
+      var $labelMehdi = $('#labelMehdi');
+      var $labelManu = $('#labelManu');
+      var $labelKrevette = $('#labelKrevette');
       $("#img1").mouseover(function() {
         img1.src = "assets/img/karl2.jpg";
+        $($labelKarl).html('Atout<br />Barbe');
       })
       $("#img1").mouseout(function() {
         img1.src = "assets/img/karl1.jpg";
+        $($labelKarl).html('Karl LEVASSEUR<br />Chef de projet web')
       })
 
       $("#img2").mouseover(function() {
