@@ -3,18 +3,13 @@ $(function() {
 
   // Déclaration des instances de Materialize
   $('.tap-target').tapTarget('open');
-  $('.modal').modal({ onOpenStart : function() { $('.modal-trigger').fadeOut(); }, onCloseStart : function() { $('.modal-trigger').fadeIn(); } });
+  $('.modal').modal({ onOpenStart : function() { $('.modal-trigger').fadeOut();
+  var totalPrice = getTotalCartPrice();
+  $('#totalOnCart').text('Le total est de : ' + parseFloat(totalPrice).toFixed(2) + '€');
+ }, onCloseStart : function() { $('.modal-trigger').fadeIn(); } });
   $('.tooltipped').tooltip();
   $('select').formSelect();
   $('.sidenav').sidenav();
-
-  $('.modal-trigger').on('click', function() {
-    $(this).fadeOut();
-  });
-
-  $('.modal-close').on('click', function() {
-    $('.modal-trigger').fadeIn();
-  });
 
   // Déclaration du panier vide au démarrage.
   var cart = [];
@@ -260,6 +255,8 @@ $(function() {
       if(cart[id].montant < 100) {
         cart[id].montant += 1;
         updateTexts(id);
+        var totalPrice = getTotalCartPrice();
+        $('#totalOnCart').text('Le total est de : ' + parseFloat(totalPrice).toFixed(2) + '€');
       } else {
         swal('Oops!', 'Impossible d\'ajouter plus de produits que 100.', 'error');
       }
@@ -270,6 +267,8 @@ $(function() {
       if(cart[id].montant > 1) {
         cart[id].montant -= 1;
         updateTexts(id);
+        var totalPrice = getTotalCartPrice();
+        $('#totalOnCart').text('Le total est de : ' + parseFloat(totalPrice).toFixed(2) + '€');
       } else {
         swal('Oops!', 'Pour supprimer une valeur, merci d\'appuyer sur le bouton supprimer. La valeur ne peut pas être en dessous de 1.', 'error');
       }
@@ -279,6 +278,8 @@ $(function() {
     $('#deleteObject'+cart[id].id).on('click', function() {
       deleteOnCart(id);
       deleteObjects(id + 1);
+      var totalPrice = getTotalCartPrice();
+      $('#totalOnCart').text('Le total est de : ' + parseFloat(totalPrice).toFixed(2) + '€');
     });
   }
 
@@ -619,7 +620,7 @@ $(function() {
       });
       setInterval (function() {
         $('.carousel').carousel('next');
-      }, 4000);
+      }, 5000);
 
       // End of Manouel's
 
