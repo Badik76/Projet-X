@@ -437,15 +437,15 @@ $(function() {
                 session.password = $password;
                 session.phoneNumber = $phoneNumber;
 
-                $('#contactLastName').attr('disabled', true);
+                $('#contactLastName').attr('disabled', true).val('');
                 $('#labelContactLastName').text(session.lastName);
-                $('#contactFirstName').attr('disabled', true);
+                $('#contactFirstName').attr('disabled', true).val('');
                 $('#labelContactFirstName').text(session.firstName);
-                $('#contactEmail').attr('disabled', true);
-                $('#labelContactEmail').text(session.email);
-                $('#contactPhoneNumber').attr('disabled', true);
+                $('#contactMail').attr('disabled', true).val('');
+                $('#labelContactMail').text(session.email);
+                $('#contactPhoneNumber').attr('disabled', true).val('');
                 $('#labelContactPhoneNumber').text(session.phoneNumber);
-                $('#contactPasswordField').attr('hidden', false);
+                $('#contactPasswordField').attr('hidden', false).val('');
                 swal('Youpi!', 'Bienvenue sur AWP '+parseChar(session.firstName)+' '+parseChar(session.lastName)+'! Création du compte réussi!', 'success');
                 $('#accountModalContent').slideUp();
                 $('#paymentMethodsModalContent').slideDown();
