@@ -403,6 +403,20 @@ input[type="email"]:not(.browser-default):disabled + label {
   padding-bottom:7px;
 }
 
+@media all and (max-width:1232px) {
+  .hide-on-med-and-down {
+    display : none;
+  }
+
+  .hide-on-med-and-up {
+    display : block;
+  }
+}
+
+.mb-10 {
+  margin-bottom:10px;
+}
+
 /* End Mehdi's part  */
 
 /* Magalie's part  */

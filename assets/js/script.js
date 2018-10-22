@@ -15,9 +15,11 @@ var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
   var currentScrollPos = window.pageYOffset;
   if(prevScrollpos > currentScrollPos) {
-    $('#navbar').css('top', '0');
+    //$('#navbar').css('top', '0');
+    $('#navbar').fadeIn();
   } else {
-    $('#navbar').css('top', '-64px');
+    //$('#navbar').css('top', '-64px');
+    $('#navbar').fadeOut();
   }
   prevScrollpos = currentScrollPos;
 }
@@ -73,7 +75,7 @@ var products = [
     product: 'L\'atelier du coteau',
     image: 'assets/img/atelier.png',
     link : 'https://www.latelierducoteau.com/',
-    description : 'L\'Atelier du coteau propose des ateliers de Danse, linguistiques et yoga pour tous.',
+    description : 'L\'Atelier du coteau propose des ateliers libre pour tous.',
     price: 500,
     montant : 1,
     category : 'showcase',
@@ -84,7 +86,7 @@ var products = [
     product: 'Jeff Bridges Sleeping Tapes',
     image: 'assets/img/jeff.png',
     link : 'http://www.dreamingwithjeff.com/',
-    description : 'Jeff Bridges Sleeping Tapes est un compositeur qui propose ses sons en ligne.',
+    description : 'Jeff Bridges Sleeping Tapes propose une mise en page sobre.',
     price:140,
     montant : 1,
     category : 'showcase',
@@ -106,7 +108,7 @@ var products = [
     product: 'CMS forum',
     image: 'assets/img/forum1.png',
     link : 'https://www.phpbb.com/customise/db/style/ne_blackgreen/?sid=b00140a910d4a99ca75f4781a5f3a389',
-    description : 'système de gestion de contenus lié au forum à personnaliser',
+    description : 'Systèmes de gestion de contenu pour forums à personnaliser.',
     price: 376.45,
     montant : 1,
     category : 'forum',
@@ -117,7 +119,7 @@ var products = [
     product: 'CMS forum',
     image: 'assets/img/forum2.png',
     link : 'https://www.phpbb.com/customise/db/style/fth_tropic/?sid=b00140a910d4a99ca75f4781a5f3a389',
-    description : 'système de gestion de contenus lié au forum à personnaliser',
+    description : 'Systèmes de gestion de contenu pour forums à personnaliser.',
     price:140,
     montant : 1,
     category : 'forum',
@@ -128,7 +130,7 @@ var products = [
     product: 'CMS forum',
     image: 'assets/img/forum3.png',
     link : 'https://www.phpbb.com/customise/db/style/we_universal/?sid=b00140a910d4a99ca75f4781a5f3a389',
-    description : 'système de gestion de contenus lié au forum à personnaliser',
+    description : 'Systèmes de gestion de contenu pour forums à personnaliser.',
     price: 99.99,
     montant : 1,
     category : 'forum',
@@ -139,7 +141,7 @@ var products = [
     product: 'Netflix',
     image: 'assets/img/netflix.png',
     link : 'https://www.netflix.com/app',
-    description : 'leader mondial de service d\'abonnement permettant la diffusion de films et séries TV',
+    description : 'Leader mondial des films et séries en streaming.',
     price: 500,
     montant : 1,
     category : 'mobile',
@@ -150,7 +152,7 @@ var products = [
     product: 'Blablacar',
     image: './assets/img/blablacar.png',
     link : 'https://www.blablacar.fr/apps-mobile',
-    description : 'Marre des trains ? Pensez covoiturage, pensez "Blablacar", sympathie et voyage assurée.',
+    description : 'Marre des trains ? Pensez covoiturage, pensez "Blablacar".',
     price:140,
     montant : 1,
     category : 'mobile',
@@ -161,7 +163,7 @@ var products = [
     product: 'Discord',
     image: './assets/img/discord.png',
     link : 'https://discordapp.com/',
-    description : 'Chat vocal et texte tout-en-un gratuits ,sécurisés et qui fonctionnent sur PC et smartphone.',
+    description : 'Rejoignez Discord pour discuter de tout avec vos amis.',
     price: 99.99,
     montant : 1,
     category : 'mobile',
@@ -172,7 +174,7 @@ var products = [
     product: 'Symfony',
     image: './assets/img/symfony.png',
     link : 'https://symfony.com/',
-    description : 'Symfony <br/> framework php qui facilite la vie.',
+    description : 'Symfony, framework PHP que nous utilisons sur nos sites.',
     price: 49.99,
     montant : 1,
     category : 'framework',
@@ -183,7 +185,7 @@ var products = [
     product: 'Bootstrap',
     image: './assets/img/bootstrap.png',
     link : 'https://screenshots.firefox.com/Qms4PtWitbgMNrgY/getbootstrap.com',
-    description : 'Bootstrap <br/> simplifie le responsive et le css.',
+    description : 'Bootstrap propose une vaste librairie sympa à utiliser.',
     price: 49.99,
     montant : 1,
     category : 'framework',
@@ -194,7 +196,7 @@ var products = [
     product: 'Django',
     image: './assets/img/django.png',
     link : 'https://www.djangoproject.com/',
-    description : 'Django construction de page web <br/> simplifié avec encore moins de code.',
+    description : 'Django, framework Python proposant pas mal de possibilités.',
     price: 49.99,
     montant : 1,
     category : 'framework',
@@ -342,7 +344,7 @@ for(var cats = 0; cats < categories.length; cats++) {
     for(var prods = 0; prods < shuffleProds.length; prods++) {
       var prod = shuffleProds[prods];
       $('#productList').append(`
-        <div class="${prod.category} trObject col s12 m4">
+        <div class="${prod.category} trObject col s12 m6 l4 mb-10">
         <div class="card">
         <div class="card-image">
         <a class="himg" target="_blank" href="${prod.link}"><img class="responsive-img-products" src="${prod.image}" /></a>
@@ -351,7 +353,7 @@ for(var cats = 0; cats < categories.length; cats++) {
         <div class="divider"></div>
         <div class="card-content">
         <p><span class="badge blue white-text">${prod.categoryName}</span></p><br /><br />
-        <p>${prod.description}</p>
+        <p class="truncate">${prod.description}</p>
         </div>
         <div class="divider"></div>
         <div class="card-content">
