@@ -1,15 +1,21 @@
+var test = ['test', 'test2', 'test3'];
+console.log(test);
+delete test[1];
+console.log(test);
+
 $(function() {
   // Mehdi's part2
 
   // Déclaration des instances de Materialize
   $('.tap-target').tapTarget('open');
-  $('.modal').modal({ onOpenStart : function() { $('.modal-trigger').fadeOut();
+  $('.modal').modal({ onOpenStart : function() { $('#showShoppingCartModal').fadeOut();
   var totalPrice = getTotalCartPrice();
   $('#totalOnCart').text('Le total est de : ' + parseFloat(totalPrice).toFixed(2) + '€');
-}, onCloseStart : function() { $('.modal-trigger').fadeIn(); } });
+}, onCloseStart : function() { $('#showShoppingCartModal').fadeIn(); } });
 $('.tooltipped').tooltip();
 $('select').formSelect();
-$('.sidenav').sidenav();
+$('.sidenav').sidenav({ edge : 'right', onOpenStart : function() { $('#showShoppingCartModal').fadeOut();
+}, onCloseStart : function() { $('#showShoppingCartModal').fadeIn(); } });
 
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
@@ -374,8 +380,20 @@ for(var cats = 0; cats < categories.length; cats++) {
     // Ecouteur bouton ajouter dans le panier
     $('.addNewProductInCart').on('click', function() {
       var item = this.dataset.itemName;
-      addItemOnCart(item, true);
-      M.toast({html: 'Produit ajouté au panier!'})
+      var failure = true;
+      for(var i = 0; i < products.length; i++) {
+        if(products[i].product === item) {
+          failure = false;
+        }
+      }
+      if(failure === false) {
+        addItemOnCart(item, true);
+        M.toast({html: 'Produit ajouté au panier!'})
+        var totalPrice = getTotalCartPrice();
+        $('#totalOnCart').text('Le total est de : ' + parseFloat(totalPrice).toFixed(2) + '€');
+      } else {
+        swal('Oops!', 'Erreur interne...', 'error');
+      }
     });
     $('.tooltipped').tooltip();
 
@@ -451,13 +469,13 @@ for(var cats = 0; cats < categories.length; cats++) {
               session.phoneNumber = $phoneNumber;
 
               $('#contactLastName').attr('disabled', true).val('');
-              $('#labelContactLastName').text(session.lastName);
+              $('#labelContactLastName').text(session.lastName).removeClass('active');
               $('#contactFirstName').attr('disabled', true).val('');
-              $('#labelContactFirstName').text(session.firstName);
+              $('#labelContactFirstName').text(session.firstName).removeClass('active');
               $('#contactMail').attr('disabled', true).val('');
-              $('#labelContactMail').text(session.email);
+              $('#labelContactMail').text(session.email).removeClass('active');
               $('#contactPhoneNumber').attr('disabled', true).val('');
-              $('#labelContactPhoneNumber').text(session.phoneNumber);
+              $('#labelContactPhoneNumber').text(session.phoneNumber).removeClass('active');
               $('#contactPasswordField').attr('hidden', false).val('');
               swal('Youpi!', 'Bienvenue sur AWP '+parseChar(session.firstName)+' '+parseChar(session.lastName)+'! Création du compte réussi!', 'success');
               $('#accountModalContent').slideUp();
