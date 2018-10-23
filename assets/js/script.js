@@ -1,8 +1,3 @@
-var test = ['test', 'test2', 'test3'];
-console.log(test);
-delete test[1];
-console.log(test);
-
 $(function() {
   // Mehdi's part2
 
